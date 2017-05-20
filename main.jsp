@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="checkvalid.jsp" %>
 <%@page import="java.util.*"%>
-<%@page import="org.mariadb.jdbc.Driver"%>
+<%@page import="com.mysql.jdbc.Driver"%>
 <%@page import="java.sql.*"%>
-<%@page import="org.mariadb.jdbc.ResultSetMetaData"%>
+<%@page import="com.mysql.jdbc.ResultSetMetaData"%>
 
 <%
 
@@ -16,7 +16,7 @@
 		+ path + "/";
 
 	/** 链接数据库参数 **/
-	String driverName = "org.mariadb.jdbc.Driver"; //驱动名称
+	String driverName = "com.mysql.jdbc.Driver"; //驱动名称
 	String DBUser = "user1"; //mysql用户名
 	String DBPasswd = "123456"; //mysql密码
 	String DBName = "teaching"; //数据库名
