@@ -1,7 +1,7 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="checkvalid.jsp" %>
 <%@page import="java.util.*"%>
-<%@page import="com.mysql.jdbc.Driver"%>
+<%@page import="org.mariadb.jdbc.Driver"%>
 <%@page import="java.sql.*"%>
 <%@page import="com.mysql.jdbc.ResultSetMetaData"%>
 
@@ -16,7 +16,7 @@
 		+ path + "/";
 
 	/** 链接数据库参数 **/
-	String driverName = "com.mysql.jdbc.Driver"; //驱动名称
+	String driverName = "org.mariadb.jdbc.Driver"; //驱动名称
 	String DBUser = "user1"; //mysql用户名
 	String DBPasswd = "123456"; //mysql密码
 	String DBName = "teaching"; //数据库名
@@ -38,8 +38,8 @@
 
 	//设置字符集
 	stmt.executeQuery("SET NAMES UTF8");
-	
-	
+
+
 	//申明～？
 	Statement stmt2 = conn.createStatement();
 
@@ -48,13 +48,13 @@
 
 	//要执行的 sql 查询
 	String sql;
-	
-	
+
+
 %>
 <html>
 <head>
 	<title>~WELCOME TO MY HOMEPAGE~</title>
-	<meta http-equiv="content-Type" content="text/html;charset=UTF-8"> 
+	<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
 	<style>
 		.input_detail {
 			width:500px;
@@ -68,8 +68,8 @@
 			overflow:auto;
 		}
 		.comment{
-			border-style: dashed; 
-			border-width: 1px 0px 0px 0px; 
+			border-style: dashed;
+			border-width: 1px 0px 0px 0px;
 			border-color: "#202020";
 		}
 	</style>
@@ -132,7 +132,7 @@
 				if (xmlhttp!=null){
 					xmlhttp.onreadystatechange=function(){
 						if (xmlhttp.readyState==4 && xmlhttp.status==200){
-						
+
 							window.location.reload();
 						}
 					}
@@ -194,7 +194,7 @@
 	System.out.println(sql);
 	//取得结果
 	rs = stmt.executeQuery(sql);
-	
+
 	while (rs.next()){
 	%>
 	<div align="center">
@@ -223,7 +223,7 @@
 	while (rs2.next()){
 	%>
 	<tr height="">
-		
+
 	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("userID"));%>"><%out.print(rs2.getString("userName"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
 	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("releaseTime"));%></font>
