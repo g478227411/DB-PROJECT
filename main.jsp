@@ -3,7 +3,7 @@
 <%@page import="java.util.*"%>
 <%@page import="org.mariadb.jdbc.Driver"%>
 <%@page import="java.sql.*"%>
-<%@page import="com.mysql.jdbc.ResultSetMetaData"%>
+<%@page import="org.mariadb.jdbc.ResultSetMetaData"%>
 
 <%
 
