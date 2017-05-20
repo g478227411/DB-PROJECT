@@ -17,11 +17,11 @@
 
 	/** 链接数据库参数 **/
 	String driverName = "com.mysql.jdbc.Driver"; //驱动名称
-	String DBUser = "user1"; //mysql用户名
-	String DBPasswd = "123456"; //mysql密码
-	String DBName = "teaching"; //数据库名
-	String MySQLServer = "59.108.48.17"; //MySQL地址
-	String MySQLServerPort = "3307"; //MySQL端口号（默认为3306）
+	String DBUser = "chat"; //mysql用户名
+	String DBPasswd = "dev.ethyl.cc-chat-database-user"; //mysql密码
+	String DBName = "chat"; //数据库名
+	String MySQLServer = "localhost"; //MySQL地址
+	String MySQLServerPort = "3306"; //MySQL端口号（默认为3306）
 
 	//数据库完整链接地址
 	String connUrl = "jdbc:mysql://"+MySQLServer+":"+MySQLServerPort+"/" + DBName + "?user="
