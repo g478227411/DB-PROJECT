@@ -237,7 +237,7 @@
 	<div id="nav">
 		<ul>
 			<li><img src="fake-icon.png" class="head" alt="none">
-				<%rs.getString("user_name")%></li>
+				<%out.print(rs.getString("user_name"));%></li>
 			<li><a href="#">我的关注</a></li>
 			<li><a href="#">我的粉丝</a></li>
 		</ul>
