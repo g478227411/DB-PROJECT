@@ -227,11 +227,12 @@
 		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 	</header>
 
-	<main>
+
+	<div id="nav">
 		<p>我想灌水：</p>
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
-	</main>
+	</div>
 <div id="section">
 
 	<%
