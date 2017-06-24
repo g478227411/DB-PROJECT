@@ -238,14 +238,13 @@
 
 	<div id="nav" text-align="center">
 		<div class="bg">
-			<P><img src="fake-icon.png" class="head" alt="none"><%
+			<img src="fake-icon.png" class="head" alt="none"><%
 				 out.println(rs.getString("user_name"));
 			 %>
-			</P>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
-			 <br><br>
+			 <br>
 </div>
 </div>
 	</div>
