@@ -13,6 +13,7 @@ padding:5px;
 width:70%;
 float:right;
 padding:10px;
+border-radius:5px;
 FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#b8c4cb,endColorStr=red); /*IE 6 7 8*/ 
 background: -ms-linear-gradient(top, #fff,  #0000ff);        /* IE 10 */
 background:-moz-linear-gradient(top,#b8c4cb,#f6f6f8);/*火狐*/ 
@@ -62,8 +63,10 @@ p.exl {font-size:12px;
   font-family:Georgia, serif;
   text-align: center;
 }
-h1{font-size:18px;
-  color:#F00;
+h1{
+  font-family:Arial,Verdana,Sans-serif;
+  font-size:20px;
+  text-align: center;
 }
 
 .linear{
