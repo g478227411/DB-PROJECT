@@ -233,9 +233,6 @@
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
-	<div class="linear">
-		aaa
-	</div>
 <div id="section">
 <div class="linear">
 
@@ -256,7 +253,6 @@
 
 	while (rs.next()){
 	%>
-	<div align="center" width=100%>
 		<div class="msg-list">
    <div id="lphoto">
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
@@ -326,7 +322,6 @@
 	<div>
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
-	</div>
 	</div>
 	</div>
 	</div>
