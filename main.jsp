@@ -60,7 +60,7 @@
 			}
 
 			.desktop_logout {
-				display: hidden;
+				display: none;
 			}
 		}
 
@@ -71,7 +71,7 @@
 			}
 
 			.mobile_logout {
-				display: hidden;
+				display: none;
 			}
 		}
 		.input_detail {
