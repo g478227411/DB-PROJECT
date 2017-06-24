@@ -47,7 +47,7 @@
 				<SELECT onclick="onSelect(this)" name="birthYear">
 				<%
 					for (int i=1900;i<=2017;i++){
-						%> <option value= <% = i %> <% if (i == 2000) { %> selected <% } %> > <% = i %> </option> <%
+						%> <option value= <% =i %> <% if (i == 2000) { %> selected <% } %> > <% =i %> </option> <%
 					}
 				%>
 				</SELECT>
