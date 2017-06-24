@@ -303,7 +303,7 @@
 		+				"FROM `account` as a, `comment` as b "
 		+	"where a.user_id = b.user_id and "
 		+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
-		+"ORDER BY release_time DESC LIMIT 0,10;";
+		+"ORDER BY release_time LIMIT 0,10;";
 	System.out.println(sql2);
 	ResultSet rs2 = stmt2.executeQuery(sql2);
 	while (rs2.next()){
