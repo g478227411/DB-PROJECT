@@ -189,7 +189,7 @@
 	rs = stmt.executeQuery(sql);
 
 	while (rs.next()){
-	%-->
+	%>
 	<div align="center">
 	<hr width="700"/>
 	<table bgcolor="">
@@ -235,7 +235,7 @@
 	</div>
 	<%
 	}
-	%>
+	%-->
 </body>
 </html>
 <%
