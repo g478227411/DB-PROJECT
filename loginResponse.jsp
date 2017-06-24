@@ -45,12 +45,12 @@
 		stmt.executeQuery("SET NAMES UTF8");
 
 		//要执行的 sql 查询
-		String sql = "SELECT passwd FROM `account` where userID='"+userID+"' LIMIT 1";
+		String sql = "SELECT password FROM `account` where user_id='"+userID+"' LIMIT 1";
 
 		//取得结果
 		ResultSet rs = stmt.executeQuery(sql);
 		if (rs.next()){
-			if (rs.getString("passwd").equals(passwd)){
+			if (rs.getString("password").equals(passwd)){
 				ok=1;
 				session.setAttribute("login","ok");
 				session.setAttribute("userID",userID);
