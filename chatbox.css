@@ -1,7 +1,7 @@
-#lphoto {float: left; width: 6%;}
-#lcontent {float: right; width: 94%;}
-#rphoto {float: right; width: 6%;}
-#rcontent {float: left; width: 94%;}
+#lphoto {float: left; width: 10%;}
+#lcontent {float: right; width: 90%;}
+#rphoto {float: right; width: 10%;}
+#rcontent {float: left; width: 90%;}
 #header {
 background-color:black;
 color:white;

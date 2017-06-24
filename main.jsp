@@ -226,7 +226,7 @@
 			<input type="submit" value="查找好友">
 		</form>
 
-		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
+		<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 	</header>
 
 
@@ -234,6 +234,7 @@
 		<p>我想灌水：</p>
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
+		<br>
 	</div>
 
 	<div id="nav" >
