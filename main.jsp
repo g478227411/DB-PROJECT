@@ -44,11 +44,36 @@
 
 
 %>
+
+<!DOCTYPE html>
+
 <html>
 <head>
-	<title>~WELCOME TO MY HOMEPAGE~</title>
-	<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
+	<meta charset=utf-8>
+	<title>WELCOME TO MY HOMEPAGE</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+		@media (max-width: 29.99em) {
+			
+			.mobile_logout {
+				float: right;
+			}
+
+			.desktop_logout {
+				display: hidden;
+			}
+		}
+
+		@media (min-width: 30em) {
+
+			.desktop_logout {
+				float: right;
+			}
+
+			.mobile_logout {
+				display: hidden;
+			}
+		}
 		.input_detail {
 			width:500px;
 			height: 80px;
@@ -66,30 +91,22 @@
 			border-color: "#202020";
 		}
 	</style>
-	<SCRIPT type="text/javascript">
+	<script>
 		function submitStatement(){
 			var statement=document.getElementById("statement");
 			var strInput = statement.value;
-			if (strInput!=""){
-				var xmlhttp=null;
-				if (window.XMLHttpRequest){
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else{
-					// code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				if (xmlhttp!=null){
+			if (strInput != "") {
+				var xmlhttp = new XMLHttpRequest();
+				if (xmlhttp != null){
 					xmlhttp.onreadystatechange=function(){
-						if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 							window.location.reload();
 						}
 					}
 					strInput="submitStatement.jsp?words="+strInput;
 					strInput=encodeURI(strInput);
 					strInput=encodeURI(strInput);
-					xmlhttp.open("GET",strInput,true);
+					xmlhttp.open("GET", strInput, true);
 					xmlhttp.send();
 				}
 			}else{
@@ -112,20 +129,11 @@
 		function submitReply(statementID){
 			var statementDoc=document.getElementById(statementID);
 			var strInput = statementDoc.value;
-			if (strInput!=""){
-				var xmlhttp=null;
-				if (window.XMLHttpRequest){
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else{
-					// code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				if (xmlhttp!=null){
+			if (strInput != ""){
+				var xmlhttp = new XMLHttpRequest();
+				if (xmlhttp != null){
 					xmlhttp.onreadystatechange=function(){
-						if (xmlhttp.readyState==4 && xmlhttp.status==200){
-
+						if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 							window.location.reload();
 						}
 					}
@@ -139,38 +147,38 @@
 				alert("请输入内容！");
 			}
 		}
-	</SCRIPT>
+	</script>
 </head>
-<body  align="center" style="width:700" bgcolor="papayawhip">
-	<div align="center">
-	<table>
-	<tr>
-	<td style="width:400">Hi, <a href="main.jsp"><%
-	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 15";
-	System.out.println(sql);
+<body>
+	<header>
+		<p>
+			Hi,  <a href="main.jsp"><%
+			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+			System.out.println(sql);
 
-	//取得结果
-	ResultSet rs = stmt.executeQuery(sql);
-	if (rs.next()){
-		out.println(rs.getString("user_name"));
-	}%></a>
-	</td>
-	<td style="width:300">
-	<form action="search.jsp" method="post">
-		<input type="text" name="searchName" maxlength="20" style="width:120"/>
-		<input type="submit" value="查找好友" />
-		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" />
-	</form>
-	</td>
-	</tr>
-	</table>
-	</div>
-	<hr width="700" align="center"/>
-	<div align="center">
-	<font size="4">我想灌水：</font>
-	<TEXTAREA type="text" id="statement"  rows=4 cols=15 class="input_detail"></TEXTAREA>
-	<input style="height: 20; width:50" type="button" value="发布" onclick="submitStatement()"/>
-	</div>
+			//取得结果
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()){
+				out.println(rs.getString("user_name"));
+			}%></a>
+		</p>
+
+		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="mobile_logout">
+
+		<form action="search.jsp" method="post">
+			<input type="text" name="searchName" maxlength="20">
+			<input type="submit" value="查找好友">
+		</form>
+
+		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="desktop_logout">
+	</header>
+
+	<main>
+		<p>我想灌水：</p>
+		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
+		<input type="button" value="发布" onclick="submitStatement()"/>
+	</main>
+
 	<%
 	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
 		+				"FROM `account` as a, `statement` as b "

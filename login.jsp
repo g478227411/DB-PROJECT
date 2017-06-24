@@ -23,11 +23,6 @@
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
-
-	<meta http-equiv="keywords" content="social network,login">
-	<meta http-equiv="description" content="This is the login page.">
-	<meta http-equiv="author" content="OOPRS,shenxuchuan@pku.edu.cn">
-	<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">
 		.style1 {
