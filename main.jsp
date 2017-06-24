@@ -55,22 +55,22 @@
 	<style>
 		@media (max-width: 29.99em) {
 			
-			.mobile_logout {
+			#mobile_logout {
 				float: right;
 			}
 
-			.desktop_logout {
+			#desktop_logout {
 				display: none;
 			}
 		}
 
 		@media (min-width: 30em) {
 
-			.desktop_logout {
+			#desktop_logout {
 				float: right;
 			}
 
-			.mobile_logout {
+			#mobile_logout {
 				display: none;
 			}
 		}
