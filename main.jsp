@@ -233,6 +233,9 @@
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
+	<div class="linear">
+		aaa
+	</div>
 <div id="section">
 <div class="linear">
 
