@@ -338,7 +338,7 @@
 <!--/table-->
 	<div>
 	<input style=" height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
-	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
+	<input type="button" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
 	</div>
 	</div>
 	<%
