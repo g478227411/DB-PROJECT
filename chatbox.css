@@ -2,6 +2,51 @@
 #lcontent {float: right; width: 94%;}
 #rphoto {float: right; width: 6%;}
 #rcontent {float: left; width: 94%;}
+#section {
+  display:  inline;
+width:70%;
+float:left;
+padding:10px;
+}
+#footer {
+background-color:black;
+color:white;
+clear:both;
+text-align:center;
+padding:5px;
+}
+#aside{
+  background-image: url(../img/1.gif);
+  line-height:30px;
+  text-align:center;
+  color: white;
+  width:420px;
+  float:right;
+  height:270px;
+  padding:5px;
+  font-size:30px;
+  font-family:GAT;
+  position: absolute;
+  top:30%;
+  right:0%;
+  -webkit-border-radius: 60px;
+    border-radius: 60px;
+}
+#header {
+background-color:black;
+color:white;
+text-align:center;
+padding:5px;
+}
+#nav {
+line-height:30px;
+border:3px solid #000;
+width:20%;
+float:left;
+padding:5px;
+font-size:40px;
+font-family:ITA;
+}
 p.exr {font-size:12px;
   font-family:Georgia, serif;
   text-align: center;
