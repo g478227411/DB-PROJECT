@@ -256,7 +256,9 @@
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
   <img src="fake-icon.png" class="head" alt="none">
   <p class="exl"><%out.print(rs.getString("user_name"));%></p>
+	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
 	</a>
+	<a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a>
   </div>
   <div id="lcontent">
       <div class="messenger-container">
@@ -264,7 +266,7 @@
       </div>
       </div>
   </div>
-	<hr width="700"/>
+	<!--hr width="700"/>
 	<table bgcolor="">
 	<tr height="10">
 	<td  width="500"><font size="4" color="black"><a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><img src="fake-icon.png"><%out.print(rs.getString("user_name"));%></a>:</font>
@@ -276,7 +278,7 @@
 	<td width="110"><font size="3" color="gray"><%out.print(rs.getString("release_time"));%></font>
 	</td>
 	<td width="40"><a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a><td>
-	</tr>
+</tr-->
 	<%
 	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time, content "
 		+				"FROM `account` as a, `comment` as b "
@@ -287,7 +289,21 @@
 	ResultSet rs2 = stmt2.executeQuery(sql2);
 	while (rs2.next()){
 	%>
-	<tr height="">
+
+	<div class="clear"></div>
+  <div class="msg-list sender">
+    <div id="rphoto">
+   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><img src="fake-icon.png">
+   <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
+	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
+   </div>
+   <div id="rcontent">
+      <div class="messenger-container">
+          <p><%out.print(rs2.getString("content"));%></p>
+      </div>
+		</div>
+  </div>
+	<!--tr height="">
 
 	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><img src="fake-icon.png"><%out.print(rs2.getString("user_name"));%></a>回复: </font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
@@ -299,7 +315,7 @@
 	}
 	rs2.close();
 	%>
-	</table>
+</table-->
 	<div>
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
