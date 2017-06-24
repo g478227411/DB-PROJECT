@@ -266,7 +266,7 @@
 	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time, content "
 		+				"FROM `account` as a, `comment` as b "
 		+	"where a.user_id = b.user_id and "
-		+	"b.statementID='"+ rs.getString("statementID")+"' "
+		+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
 		+"ORDER BY release_time DESC LIMIT 0,10;";
 	System.out.println(sql2);
 	ResultSet rs2 = stmt2.executeQuery(sql2);
