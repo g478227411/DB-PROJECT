@@ -181,7 +181,7 @@
 		+	")or b.user_id in("
 		+		"SELECT friend_id from `friends` where user_id = '" + userID + "'"
 		+	") "
-		+") ORDER BY release_time DESC LIMIT 0,10;"
+		+") ORDER BY release_time DESC LIMIT 0,10;";
 	System.out.println(sql);
 	//取得结果
 	rs = stmt.executeQuery(sql);
