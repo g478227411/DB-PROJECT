@@ -293,7 +293,8 @@
 	<div class="clear"></div>
   <div class="msg-list sender">
     <div id="rphoto">
-   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><img src="fake-icon.png">
+   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
+  <img src="fake-icon.png" class="head" alt="none">
    <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
 	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
    </div>
@@ -310,12 +311,12 @@
 	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
 	</td>
 	<td  class="comment" width="60"><td>
-	</tr>
+	</tr-->
 	<%
 	}
 	rs2.close();
 	%>
-</table-->
+<!--/table-->
 	<div>
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
