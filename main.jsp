@@ -277,7 +277,7 @@
   <p class="exl"><%out.print(rs.getString("user_name"));%></p>
 	</a>
 	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
-	<a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a>
+	<!--a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a-->
   </div>
   <div id="lcontent">
       <div class="messenger-container">
@@ -337,7 +337,7 @@
 	%>
 <!--/table-->
 	<div>
-	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
+	<input style=" height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
 	</div>
 	</div>
