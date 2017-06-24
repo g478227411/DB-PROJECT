@@ -36,15 +36,8 @@
 	//申明～？
 	Statement stmt = conn.createStatement();
 
-	//设置字符集
-	stmt.executeQuery("SET NAMES UTF8");
-
-
 	//申明～？
 	Statement stmt2 = conn.createStatement();
-
-	//设置字符集
-	stmt2.executeQuery("SET NAMES UTF8");
 
 	//要执行的 sql 查询
 	String sql;
@@ -153,13 +146,13 @@
 	<table>
 	<tr>
 	<td style="width:400">Hi, <a href="main.jsp"><%
-	sql= "SELECT * FROM `teaching`.`account` where userID='"+userID+"' LIMIT 15";
+	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 15";
 	System.out.println(sql);
 
 	//取得结果
 	ResultSet rs = stmt.executeQuery(sql);
 	if (rs.next()){
-		out.println(rs.getString("UserName"));
+		out.println(rs.getString("user_name"));
 	}%></a>
 	</td>
 	<td style="width:300">
@@ -179,14 +172,14 @@
 	<input style="height: 20; width:50" type="button" value="发布" onclick="submitStatement()"/>
 	</div>
 	<%
-	sql= "SELECT a.userID as userID,userName,statementID,releaseTime,content "
-		+				"FROM `teaching`.`account` as a, `teaching`.`statement` as b "
-		+	"where a.userID=b.userID and ("
-		+	"(b.userID='"+ userID+"') "
-		+	"or b.userID in ( "
-		+		"SELECT userID1 from `teaching`.`friends` where userID2='"+ userID+"'"
-		+	")or b.userID in("
-		+		"SELECT userID2 from `teaching`.`friends` where userID1='"+ userID+"'"
+	sql= "SELECT a.user_id as user_id,userName,statementID,releaseTime,content "
+		+				"FROM `account` as a, `statement` as b "
+		+	"where a.user_id=b.user_id and ("
+		+	"(b.user_id='"+ userID+"') "
+		+	"or b.user_id in ( "
+		+		"SELECT userID1 from `friends` where userID2='"+ userID+"'"
+		+	")or b.user_id in("
+		+		"SELECT userID2 from `friends` where userID1='"+ userID+"'"
 		+	") "
 		+")"
 	+"order by releaseTime desc "
@@ -212,9 +205,9 @@
 	<td width="40"><a href="javascript:reply('<%out.print(rs.getString("statementID"));%>')">回复</a><td>
 	</tr>
 	<%
-	String sql2="SELECT a.userID as userID,userName,commentID,releaseTime,content "
+	String sql2="SELECT a.user_id as user_id,userName,commentID,releaseTime,content "
 		+				"FROM `teaching`.`account` as a, `teaching`.`comment` as b "
-		+	"where a.userID=b.userID and "
+		+	"where a.user_id=b.user_id and "
 		+	"b.statementID='"+ rs.getString("statementID")+"' "
 		+"order by releaseTime "
 		+"limit 0,10;";
