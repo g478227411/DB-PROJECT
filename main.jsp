@@ -171,19 +171,17 @@
 	<TEXTAREA type="text" id="statement"  rows=4 cols=15 class="input_detail"></TEXTAREA>
 	<input style="height: 20; width:50" type="button" value="发布" onclick="submitStatement()"/>
 	</div>
-	<!--%
-	sql= "SELECT a.user_id as user_id,userName,statementID,releaseTime,content "
+	<%
+	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
 		+				"FROM `account` as a, `statement` as b "
-		+	"where a.user_id=b.user_id and ("
-		+	"(b.user_id='"+ userID+"') "
+		+	"where a.user_id = b.user_id and ("
+		+	"(b.user_id='" + userID + "') "
 		+	"or b.user_id in ( "
-		+		"SELECT userID1 from `friends` where userID2='"+ userID+"'"
+		+		"SELECT user_id from `friends` where friend_id = '" + userID + "'"
 		+	")or b.user_id in("
-		+		"SELECT userID2 from `friends` where userID1='"+ userID+"'"
+		+		"SELECT friend_id from `friends` where user_id = '" + userID + "'"
 		+	") "
-		+")"
-	+"order by releaseTime desc "
-	+"limit 0,10;";
+		+") ORDER BY release_time DESC LIMIT 0,10;"
 	System.out.println(sql);
 	//取得结果
 	rs = stmt.executeQuery(sql);
@@ -200,26 +198,25 @@
 	<tr height="100">
 	<td width="500"><font size="4" color="black"><%out.print(rs.getString("content"));%></font>
 	</td>
-	<td width="110"><font size="3" color="gray"><%out.print(rs.getString("releaseTime"));%></font>
+	<td width="110"><font size="3" color="gray"><%out.print(rs.getString("release_time"));%></font>
 	</td>
-	<td width="40"><a href="javascript:reply('<%out.print(rs.getString("statementID"));%>')">回复</a><td>
+	<td width="40"><a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a><td>
 	</tr>
 	<%
-	String sql2="SELECT a.user_id as user_id,userName,commentID,releaseTime,content "
-		+				"FROM `teaching`.`account` as a, `teaching`.`comment` as b "
-		+	"where a.user_id=b.user_id and "
+	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time, content "
+		+				"FROM `account` as a, `comment` as b "
+		+	"where a.user_id = b.user_id and "
 		+	"b.statementID='"+ rs.getString("statementID")+"' "
-		+"order by releaseTime "
-		+"limit 0,10;";
+		+"ORDER BY release_time DESC LIMIT 0,10;"
 	System.out.println(sql2);
 	ResultSet rs2 = stmt2.executeQuery(sql2);
 	while (rs2.next()){
 	%>
 	<tr height="">
 
-	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("userID"));%>"><%out.print(rs2.getString("userName"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
+	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><%out.print(rs2.getString("userName"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
-	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("releaseTime"));%></font>
+	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
 	</td>
 	<td  class="comment" width="60"><td>
 	</tr>
@@ -229,13 +226,13 @@
 	%>
 	</table>
 	<div>
-	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statementID"));%>" value=""/>
-	<input type="button" style="display:none;" id="<%out.print(rs.getString("statementID"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statementID"));%>')"/>
+	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
+	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
 	</div>
 	</div>
 	<%
 	}
-	%-->
+	%>
 </body>
 </html>
 <%

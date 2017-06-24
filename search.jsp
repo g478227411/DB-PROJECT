@@ -17,11 +17,11 @@
 	
 	/** 链接数据库参数 **/
 	String driverName = "com.mysql.jdbc.Driver"; //驱动名称
-	String DBUser = "user1"; //mysql用户名
-	String DBPasswd = "123456"; //mysql密码
-	String DBName = "teaching"; //数据库名
-	String MySQLServer = "59.108.48.17"; //MySQL地址
-	String MySQLServerPort = "3307"; //MySQL端口号（默认为3306）
+	String DBUser = "chat"; //mysql用户名
+	String DBPasswd = "dev.ethyl.cc-chat-database-user"; //mysql密码
+	String DBName = "chat"; //数据库名
+	String MySQLServer = "localhost"; //MySQL地址
+	String MySQLServerPort = "3306"; //MySQL端口号（默认为3306）
 
 	//数据库完整链接地址
 	String connUrl = "jdbc:mysql://"+MySQLServer+":"+MySQLServerPort+"/" + DBName + "?user="
@@ -36,9 +36,6 @@
 	//申明～？
 	Statement stmt = conn.createStatement();
 
-	//设置字符集
-	stmt.executeQuery("SET NAMES UTF8");
-
 	//要执行的 sql 查询
 	
 	String userID=(String)session.getAttribute("userID");
@@ -48,6 +45,8 @@
 	String sql=null;
 	
 %>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Search page</title>
@@ -56,15 +55,7 @@
 	<SCRIPT type="text/javascript">
 		function addFriend(userID){
 			if (userID!=""){
-				var xmlhttp=null;
-				if (window.XMLHttpRequest){
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else{
-					// code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
+				var xmlhttp = new XMLHttpRequest();
 				if (xmlhttp!=null){
 					xmlhttp.onreadystatechange=function(){
 						if (xmlhttp.readyState==4 && xmlhttp.status==200){
@@ -111,14 +102,13 @@
 	<%
 	if (searchName!=null){
 		
-		sql= "SELECT * FROM `teaching`.`account` "
-			+"where userName like '%"+searchName+"%' "
-			+"and userID !='"+userID+"' "
-			+"and userID not in ( "
-			+"select userID2 from `teaching`.`friends` where userID1='"+userID+"'"
-			+") and userID not in ( "
-			+"select userID1 from `teaching`.`friends` where userID2='"+userID+"'"
-			+" );";
+		sql = "SELECT * FROM `account` "
+			+ "where user_name like '%" + searchName + "%' "
+			+ "and user_id !='" + userID + "' "
+			+ "and user_id not in ( "
+			+ "select userID2 from `friends` where userID1='" + userID + "'"
+			+ ") and user_id not in ( "
+			+ "select userID1 from `friends` where userID2='" + userID + "');";
 		
 		//取得结果
 		System.out.println(sql);
@@ -127,9 +117,9 @@
 		%>
 		<div align="center" style="width:700" >
 		<li>
-		<a href="view.jsp?userID=<%out.print(rs.getString("userID"));%>"><%out.print(rs.getString("userName"));%></a> <%out.print(rs.getString("sex"));%> <%out.print(rs.getString("birthYear"));%>年<%out.print(rs.getString("birthMonth"));%>月
+		<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><%out.print(rs.getString("user_id"));%></a> <%out.print(rs.getString("sex"));%> <%out.print(rs.getString("birth_year"));%>年<%out.print(rs.getString("birth_month"));%>月
 		
-		<span id="<%out.print(rs.getString("userID"));%>"><input type="button" value="加为好友" onclick="addFriend('<%out.print(rs.getString("userID"));%>')" /></span>
+		<span id="<%out.print(rs.getString("userID"));%>"><input type="button" value="加为好友" onclick="addFriend('<%out.print(rs.getString("user_id"));%>')" /></span>
 		
 		</li>
 		</div>
