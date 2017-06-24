@@ -26,7 +26,7 @@
 			</tr>
 			<tr>
 				<td height="28">密码</td>
-				<td><input type="text" name="passwd" maxlength="20" style="width:150"></td>
+				<td><input type="password" name="passwd" maxlength="20" style="width:150"></td>
 			</tr>
 			<tr>
 				<td height="28">姓名</td>
@@ -46,8 +46,8 @@
 				<td>
 				<SELECT onclick="onSelect(this)" name="birthYear">
 				<%
-					for (int i=1900;i<=2014;i++){
-						%><option value=<%=i%>><%=i%></option><%
+					for (int i=1900;i<=2017;i++){
+						%> <option value= <% = i %> <% if (i == 2000) { %> selected <% } %> > <% = i %> </option> <%
 					}
 				%>
 				</SELECT>
