@@ -230,17 +230,19 @@
 	</header>
 
 
-	<div id="header">
+	<div id="header" >
 		<p>我想灌水：</p>
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
 
-	<div id="nav">
+	<div id="nav" text-align="center">
+		<div class="bg">
 			<P><img src="fake-icon.png" class="head" alt="none"></P>
 			<div class="wall-of-buttons">
-       <P><a class="large magenta button">我的关注</a></P>
+       <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
+</div>
 </div>
 	</div>
 <div id="section">
