@@ -1,0 +1,87 @@
+#lphoto {float: left; width: 6%;}
+#lcontent {float: right; width: 94%;}
+#rphoto {float: right; width: 6%;}
+#rcontent {float: left; width: 94%;}
+p.exr {font-size:12px;
+  font-family:Georgia, serif;
+  text-align: center;
+}
+p.exl {font-size:12px;
+  font-family:Georgia, serif;
+  text-align: center;
+}
+h1{font-size:18px;
+  color:#F00;
+}
+.head{
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+  border:5px solid rgba(0,0,0,0.4);
+  width:48px;
+  height:48px;'
+  background-clip: padding-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  border-radius: 50%;
+  -webkit-border-radius:100px;
+  -moz-border-radius:100px;
+}
+.msg-list {
+        width: 100%;
+    }
+.messenger-container {
+      padding: 8px 15px 8px 13px;
+      margin: 0 0 25px 35px;
+      float: left;
+      max-width: 82%;
+      background: #f2f2f2;
+      border-radius: 10px;
+      min-width: 20%;
+      position: relative; box-sizing: border-box;
+      box-shadow: 7px 10px 6px -5px #BBC0C7;
+  }
+  .messenger-container p {
+     color: #3D3D3D;
+      font-size: 16px;
+      margin-bottom: 6px;
+      line-height: 18px;
+      word-wrap: break-word; margin: 0;
+  }
+  .sender .messenger-container {
+      float: right;
+      margin-right: 35px;
+      width: auto;
+      background: #D5DBFF;
+      margin-left: 0px;
+      padding: 8px 15px 8px 13px;
+  }
+  .clear {
+      clear:both;
+      width: 100%;
+      padding: 0px !important;
+      margin: 0px;
+      height:0px;
+  }
+     .messenger-container::before {
+         width: 0px;
+         height: 0px;
+         border-top: 8px solid transparent;
+         border-bottom: 8px solid transparent;
+
+         border-right:15px solid #f2f2f2;
+         content: "";
+         position: absolute;
+         top: 9px;
+         left: -15px;
+     }
+  .sender .messenger-container::before {
+        width: 0px;
+        height: 0px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 15px solid #D5DBFF;
+        content: "";
+        position: absolute;
+        top: 9px;
+        left: 99%;border-right: none;
+ }

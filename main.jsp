@@ -52,6 +52,8 @@
 	<meta charset=utf-8>
 	<title>WELCOME TO MY HOMEPAGE</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="chatbox.css" media="screen" >
 	<style>
 		@media (max-width: 29.99em) {
 
@@ -249,6 +251,19 @@
 	while (rs.next()){
 	%>
 	<div align="center">
+		<div class="msg-list">
+   <div id="lphoto">
+		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
+  <img src="fake-icon.png" class="head" alt="none">
+  <p class="exl"><%out.print(rs.getString("user_name"));%></p>
+	</a>
+  </div>
+  <div id="lcontent">
+      <div class="messenger-container">
+      <p><%out.print(rs.getString("content"));%></p>
+      </div>
+      </div>
+  </div>
 	<hr width="700"/>
 	<table bgcolor="">
 	<tr height="10">
