@@ -253,6 +253,7 @@
 
 	while (rs.next()){
 	%>
+	<div class="clear"></div>
 		<div class="msg-list">
    <div id="lphoto">
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
@@ -323,11 +324,11 @@
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
 	</div>
-	</div>
-	</div>
 	<%
 	}
 	%>
+</div>
+</div>
 </body>
 </html>
 <%
