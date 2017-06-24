@@ -336,7 +336,7 @@
 	rs2.close();
 	%>
 <!--/table-->
-	<div>
+	<div style="text-align:center;">
 		评论：
 	<input style=" height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
