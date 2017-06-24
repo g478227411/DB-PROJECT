@@ -233,8 +233,8 @@
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
-<div id="section">
-<div class="linear">
+<!--div id="section">
+<div class="linear"-->
 
 	<%
 	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
@@ -254,6 +254,7 @@
 	while (rs.next()){
 	%>
 		<div class="msg-list">
+			<div class="linear">
    <div id="lphoto">
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
   <img src="fake-icon.png" class="head" alt="none">
@@ -268,6 +269,7 @@
       </div>
       </div>
   </div>
+	  </div>
 	<!--hr width="700"/>
 	<table bgcolor="">
 	<tr height="10">
@@ -322,8 +324,6 @@
 	<div>
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
-	</div>
-	</div>
 	</div>
 	<%
 	}
