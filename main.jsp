@@ -234,7 +234,6 @@
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
 <div id="section">
-<div class="linear">
 
 	<%
 	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
@@ -253,6 +252,7 @@
 
 	while (rs.next()){
 	%>
+	<div class="linear">
 	<div class="clear"></div>
 		<div class="msg-list">
    <div id="lphoto">
@@ -324,10 +324,10 @@
 	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
 	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
 	</div>
+	</div>
 	<%
 	}
 	%>
-</div>
 </div>
 </body>
 </html>
