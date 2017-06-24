@@ -238,10 +238,9 @@
 
 	<div id="nav" text-align="center">
 		<div class="bg">
-			<P><img src="fake-icon.png" class="head" alt="none">
-				<a href="main.jsp"><%
+			<P><img src="fake-icon.png" class="head" alt="none"><%
 				 out.println(rs.getString("user_name"));
-			 %></a>
+			 %>
 			</P>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
