@@ -238,10 +238,19 @@
 
 	<div id="nav" text-align="center">
 		<div class="bg">
-			<P><img src="fake-icon.png" class="head" alt="none"></P>
+			<P><img src="fake-icon.png" class="head" alt="none">
+				<a href="main.jsp"><%
+			 sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+			 System.out.println(sql);
+			 ResultSet rs = stmt.executeQuery(sql);
+			 if (rs.next()){
+				 out.println(rs.getString("user_name"));
+			 }%></a>
+			</P>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
+			 <br><br>
 </div>
 </div>
 	</div>
