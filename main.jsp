@@ -54,6 +54,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="chatbox.css" media="screen" >
+		<link href="playground.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="blingbling.css" media="all" rel="stylesheet" type="text/css" />
 	<style>
 		@media (max-width: 29.99em) {
 
@@ -236,8 +238,10 @@
 
 	<div id="nav">
 			<P><img src="fake-icon.png" class="head" alt="none"></P>
-			<P><a href="#">我的关注</a></P>
-			<P><a href="#">我的粉丝</a></P>
+			<div class="wall-of-buttons">
+       <P><a class="large magenta button">我的关注</a></P>
+       <P><a class="large green button">我的粉丝</a></P>
+</div>
 	</div>
 <div id="section">
 <h1 >好友动态</h1>
