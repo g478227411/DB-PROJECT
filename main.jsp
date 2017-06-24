@@ -54,23 +54,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
 		@media (max-width: 29.99em) {
-			
-			#mobile_logout {
-				float: right;
+
+			#mobile-header{
+
 			}
 
-			#desktop_logout {
+			#desktop-header {
 				display: none;
 			}
 		}
 
 		@media (min-width: 30em) {
 
-			#desktop_logout {
-				float: right;
+			#desktop-header {
+				display: flex;
 			}
 
-			#mobile_logout {
+			#desktop-header-user {
+				flex: 1;
+			}
+
+			#desktop-header-search {
+				flex: none;
+			}
+
+			#desktop-header-logout {
+				flex: none;
+				width: 6em;
+			}
+
+			#mobile-header {
 				display: none;
 			}
 		}
@@ -150,8 +163,8 @@
 	</script>
 </head>
 <body>
-	<header>
-		<p>
+	<header id="mobile-header">
+		<span>
 			Hi,  <a href="main.jsp"><%
 			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
 			System.out.println(sql);
@@ -161,16 +174,35 @@
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
 			}%></a>
-		</p>
+		</span>
 
-		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="mobile_logout">
+		<input type="button" value="退出登录" onclick="location.href='logout.jsp'">
 
 		<form action="search.jsp" method="post">
 			<input type="text" name="searchName" maxlength="20">
 			<input type="submit" value="查找好友">
 		</form>
+	</header>
 
-		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="desktop_logout">
+	<header id="desktop-header">
+		<span id="desktop-header-user">
+			Hi,  <a href="main.jsp"><%
+			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+			System.out.println(sql);
+
+			//取得结果
+			ResultSet rs = stmt.executeQuery(sql);
+			if (rs.next()){
+				out.println(rs.getString("user_name"));
+			}%></a>
+		</span>
+
+		<form action="search.jsp" method="post" id="desktop-header-search">
+			<input type="text" name="searchName" maxlength="20">
+			<input type="submit" value="查找好友">
+		</form>
+
+		<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 	</header>
 
 	<main>
