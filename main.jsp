@@ -233,6 +233,15 @@
 		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
+
+	<div id="nav">
+		<ul>
+			<li><img src="fake-icon.png" class="head" alt="none">
+				<%rs.getString("user_name")%></li>
+			<li><a href="#">我的关注</a></li>
+			<li><a href="#">我的粉丝</a></li>
+		</ul>
+	</div>
 <div id="section">
 
 	<%
@@ -259,8 +268,8 @@
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
   <img src="fake-icon.png" class="head" alt="none">
   <p class="exl"><%out.print(rs.getString("user_name"));%></p>
-	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
 	</a>
+	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
 	<a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a>
   </div>
   <div id="lcontent">
