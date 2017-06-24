@@ -236,7 +236,7 @@
 		<input type="button" value="发布" onclick="submitStatement()"/>
 	</div>
 
-	<div id="nav" text-align="center">
+	<div id="nav" >
 		<div class="bg">
 			<img src="fake-icon.png" class="head" alt="none"><%
 				 out.println(rs.getString("user_name"));
