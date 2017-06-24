@@ -55,8 +55,30 @@
 	<style>
 		@media (max-width: 29.99em) {
 
-			#mobile-header{
+			#mobile-header-flex-container{
+				display: flex;
+			}
 
+			#mobile-header-user {
+				flex: 1;
+			}
+
+			#mobile-header-logout {
+				flex: none;
+				width: 6em;
+			}
+
+			#mobile-header-search {
+				display: flex;
+			}
+
+			#mobile-header-search-name {
+				flex: 1;
+			}
+
+			#mobile-header-search-button {
+				flex: none;
+				width: 6em;
 			}
 
 			#desktop-header {
@@ -164,34 +186,32 @@
 </head>
 <body>
 	<header id="mobile-header">
-		<span>
-			Hi,  <a href="main.jsp"><%
-			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-			System.out.println(sql);
+		<div id="mobile-header-flex-container">
+			<span id="mobile-header-user">
+				Hi,  <a href="main.jsp"><%
+				sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+				System.out.println(sql);
 
-			//取得结果
-			ResultSet rs = stmt.executeQuery(sql);
-			if (rs.next()){
-				out.println(rs.getString("user_name"));
-			}%></a>
-		</span>
+				//取得结果
+				ResultSet rs = stmt.executeQuery(sql);
+				if (rs.next()){
+					out.println(rs.getString("user_name"));
+				}%></a>
+			</span>
 
-		<input type="button" value="退出登录" onclick="location.href='logout.jsp'">
+			<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="mobile-header-logout">
+		</div>
 
-		<form action="search.jsp" method="post">
-			<input type="text" name="searchName" maxlength="20">
-			<input type="submit" value="查找好友">
+		<form action="search.jsp" method="post" id="mobile-header-search">
+			<input type="text" name="searchName" maxlength="20" id="mobile-header-search-name">
+			<input type="submit" value="查找好友" id="mobile-header-search-button">
 		</form>
 	</header>
 
 	<header id="desktop-header">
 		<span id="desktop-header-user">
 			Hi,  <a href="main.jsp"><%
-			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-			System.out.println(sql);
-
-			//取得结果
-			ResultSet rs = stmt.executeQuery(sql);
+			rs = stmt.executeQuery(sql);
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
 			}%></a>
