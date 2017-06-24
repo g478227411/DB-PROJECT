@@ -171,7 +171,7 @@
 	<TEXTAREA type="text" id="statement"  rows=4 cols=15 class="input_detail"></TEXTAREA>
 	<input style="height: 20; width:50" type="button" value="发布" onclick="submitStatement()"/>
 	</div>
-	<%
+	<!--%
 	sql= "SELECT a.user_id as user_id,userName,statementID,releaseTime,content "
 		+				"FROM `account` as a, `statement` as b "
 		+	"where a.user_id=b.user_id and ("
@@ -189,7 +189,7 @@
 	rs = stmt.executeQuery(sql);
 
 	while (rs.next()){
-	%>
+	%-->
 	<div align="center">
 	<hr width="700"/>
 	<table bgcolor="">
