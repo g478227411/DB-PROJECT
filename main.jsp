@@ -252,7 +252,7 @@
 	<hr width="700"/>
 	<table bgcolor="">
 	<tr height="10">
-	<td  width="500"><font size="4" color="black"><a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><%out.print(rs.getString("user_name"));%></a>:</font>
+	<td  width="500"><font size="4" color="black"><a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><img src="fake-icon.png"><%out.print(rs.getString("user_name"));%></a>:</font>
 	</td>
 	</tr>
 	<tr height="100">
@@ -274,7 +274,7 @@
 	%>
 	<tr height="">
 
-	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><%out.print(rs2.getString("user_name"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
+	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><img src="fake-icon.png"><%out.print(rs2.getString("user_name"));%></a>回复: </font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
 	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
 	</td>
