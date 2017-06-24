@@ -274,7 +274,7 @@
 	%>
 	<tr height="">
 
-	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><%out.print(rs2.getString("userName"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
+	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><%out.print(rs2.getString("user_name"));%></a>回复:</font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
 	<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
 	</td>
