@@ -252,7 +252,7 @@
 	<hr width="700"/>
 	<table bgcolor="">
 	<tr height="10">
-	<td  width="500"><font size="4" color="black"><a href="view.jsp?userID=<%out.print(rs.getString("userID"));%>"><%out.print(rs.getString("userName"));%></a>:</font>
+	<td  width="500"><font size="4" color="black"><a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><%out.print(rs.getString("user_name"));%></a>:</font>
 	</td>
 	</tr>
 	<tr height="100">
