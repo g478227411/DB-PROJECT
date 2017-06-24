@@ -3,6 +3,7 @@
 <%@page import="com.mysql.jdbc.Driver"%>
 <%@page import="java.sql.*"%>
 <%@page import="com.mysql.jdbc.ResultSetMetaData"%>
+
 <%
 	int ok=0;
 	request.setCharacterEncoding("UTF-8");
@@ -17,8 +18,8 @@
 		String passwd=request.getParameter("passwd");
 		String userName= java.net.URLDecoder.decode(request.getParameter("userName"),"UTF-8");//获取请求参数  
 		String sex=request.getParameter("sex");
-		String birthYear=request.getParameter("birthYear");
-		String birthMonth=request.getParameter("birthMonth");
+		int birthYear = Integer.parseInt(request.getParameter("birthYear"));
+		int birthMonth = Integer.parseInt(request.getParameter("birthMonth"));
 
 		String path = request.getContextPath();
 		String basePath = request.getScheme() + "://"
@@ -27,11 +28,11 @@
 
 		/** 链接数据库参数 **/
 		String driverName = "com.mysql.jdbc.Driver"; //驱动名称
-		String DBUser = "user1"; //mysql用户名
-		String DBPasswd = "123456"; //mysql密码
-		String DBName = "teaching"; //数据库名
-		String MySQLServer = "59.108.48.17"; //MySQL地址
-		String MySQLServerPort = "3307"; //MySQL端口号（默认为3306）
+		String DBUser = "chat"; //mysql用户名
+		String DBPasswd = "dev.ethyl.cc-chat-database-user"; //mysql密码
+		String DBName = "chat"; //数据库名
+		String MySQLServer = "localhost"; //MySQL地址
+		String MySQLServerPort = "3306"; //MySQL端口号（默认为3306）
 
 		//数据库完整链接地址
 		String connUrl = "jdbc:mysql://"+MySQLServer+":"+MySQLServerPort+"/" + DBName + "?user="
@@ -46,15 +47,12 @@
 		//申明～？
 		Statement stmt = conn.createStatement();
 
-		//设置字符集
-		stmt.executeQuery("SET NAMES UTF8");
-
 		//要执行的 sql 查询
-		String sql = "SELECT * FROM `teaching`.`account` where userID='"+userID+"' LIMIT 1";
+		String sql = "SELECT * FROM `account` where user_id='" + userID + "' LIMIT 1";
 		//取得结果
 		ResultSet rs = stmt.executeQuery(sql);
 		if (!rs.next()){
-			sql = "INSERT INTO `teaching`.`account` VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
+			sql = "INSERT INTO `" + DBName + "`.`account` VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
 			System.out.println(sql);
 			stmt.execute(sql);
 			ok=1;

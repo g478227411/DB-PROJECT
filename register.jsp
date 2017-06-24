@@ -35,8 +35,10 @@
 			<tr>
 				<td height="28">性别</td>
 				<td>
-				男<input type="radio" name="sex" checked="selected" value="男" />&nbsp;
-				女<input type="radio" name="sex" value="女" />
+				男<input type="radio" name="sex" value="male" />&nbsp;
+				女<input type="radio" name="sex" value="female" />
+				其他 <input type="radio" name="sex" value="other">
+				隐藏 <input type="radio" name="sex" checked="selected" value="unknown">
 				</td>
 			</tr>
 			<tr>

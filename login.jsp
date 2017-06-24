@@ -29,7 +29,7 @@
 	<meta http-equiv="author" content="OOPRS,shenxuchuan@pku.edu.cn">
 	<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style type="text/CSS">
+	<style type="text/css">
 		.style1 {
 			font-size: 18px;
 			font-weight: bold;
@@ -51,10 +51,16 @@
 			<table border="2" bordercolor="black" bgcolor="">
 				<tbody>
 					<tr>
-						<td height="28"><span class="style5">用户名</span> <input type="text" name="userID" maxlength="20" style="width:150"></td>
+						<td height="28">
+							<span class="style5">用户名</span>
+							<input type="text" name="userID" maxlength="20" style="width:150">
+						</td>
 					</tr>
 					<tr>
-						<td><span class="style5">密&nbsp;&nbsp;码</span> <input type="password" name="passwd" maxlength="20" style="width:150"></td>
+						<td>
+							<span class="style5">密码</span>
+							<input type="password" name="passwd" maxlength="20" style="width:150">
+						</td>
 					</tr>
 				</tbody>
 			</table>
