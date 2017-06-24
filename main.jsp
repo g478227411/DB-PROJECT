@@ -235,11 +235,9 @@
 	</div>
 
 	<div id="nav">
-		<ul>
-			<li><img src="fake-icon.png" class="head" alt="none"></li>
-			<li><a href="#">我的关注</a></li>
-			<li><a href="#">我的粉丝</a></li>
-		</ul>
+			<P><img src="fake-icon.png" class="head" alt="none"></P>
+			<P><a href="#">我的关注</a></P>
+			<P><a href="#">我的粉丝</a></P>
 	</div>
 <div id="section">
 
