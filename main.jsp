@@ -58,14 +58,11 @@
 <script>
 function Display()
 {
-    var divD = document.getElementById("simple-example");
-    if(divD.style.display=="none")
-    {
-        divD.style.display = "block";   /*****可见****/
-    }
-    else
-    {
-        divD.style.display = "none";    /*****不可见****/
+		var divV = document.getElementById("simple-example");
+    if(divV.style.visibility =="hidden"){
+        divV.style.visibility ="visible";
+     }else{
+        divV.style.visibility = "hidden";
     }
 }
             Ext.onReady(function() {
