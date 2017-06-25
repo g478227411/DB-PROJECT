@@ -222,7 +222,7 @@
 	System.out.println(sql);
 
 	ResultSet rs = stmt.executeQuery(sql);
-	String head_id;
+	String head_id=null;
 	%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
