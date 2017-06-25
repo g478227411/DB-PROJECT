@@ -51,15 +51,15 @@ padding:5px;
 }
 #nav {
 position:fixed;  
-top:50px;
-left:0px;
+top:150px;
+left:10px;
 line-height:20px;
 border:3px solid #000;
 width:20%;
 float:left;
 text-align: center;
 padding:5px;
-font-size:20px;
+font-size:30px;
 font-family:ITA;
 }
 p.exr {font-size:12px;
