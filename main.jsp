@@ -190,7 +190,7 @@
 	</script>
 </head>
 <body>
-	<header id="mobile-header">
+	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
 			<span id="mobile-header-user">
 				Hi,  <a href="main.jsp"><%
@@ -211,9 +211,9 @@
 			<input type="text" name="searchName" maxlength="20" id="mobile-header-search-name">
 			<input type="submit" value="查找好友" id="mobile-header-search-button">
 		</form>
-	</header>
+	</header-->
 
-	<header id="desktop-header">
+	<!--header id="desktop-header">
 		<span id="desktop-header-user">
 			Hi,  <a href="main.jsp"><%
 			rs = stmt.executeQuery(sql);
@@ -228,7 +228,7 @@
 		</form>
 
 		<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
-	</header>
+	</header-->
 
 
 	<div id="header" >
@@ -252,7 +252,10 @@
 	<div id="nav" >
 		<div class="bg">
 			<img src="fake-icon.png" class="head" alt="none"><%
-			rs = stmt.executeQuery(sql);
+			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+			System.out.println(sql);
+
+			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
 			}%>
