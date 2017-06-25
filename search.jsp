@@ -106,9 +106,9 @@
 			+ "where user_name like '%" + searchName + "%' "
 			+ "and user_id !='" + userID + "' "
 			+ "and user_id not in ( "
-			+ "select userID2 from `friends` where userID1='" + userID + "'"
+			+ "select friend_id from `friends` where user_id = '" + userID + "'"
 			+ ") and user_id not in ( "
-			+ "select userID1 from `friends` where userID2='" + userID + "');";
+			+ "select user_id from `friends` where friend_id = '" + userID + "');";
 		
 		//取得结果
 		System.out.println(sql);
