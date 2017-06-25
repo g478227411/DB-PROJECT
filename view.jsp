@@ -104,13 +104,13 @@
 	<table>
 	<tr>
 	<td style="width:400">Hi, <a href="main.jsp"><%
-	sql= "SELECT * FROM `teaching`.`account` where userID='"+userID+"' LIMIT 15";
+	sql= "SELECT * FROM `account` where user_id = '" + userID + "' LIMIT 15";
 	System.out.println(sql);
 
 	//取得结果
 	ResultSet rs = stmt.executeQuery(sql);
 	if (rs.next()){
-		out.println(rs.getString("UserName"));
+		out.println(rs.getString("user_name"));
 	}%></a>
 	</td>
 	<td style="width:300">
@@ -127,27 +127,25 @@
 	<div align="center">
 	<p width="700">
 	<%
-	sql= "SELECT * FROM `teaching`.`account` where userID='"+targetID+"' LIMIT 15";
+	sql= "SELECT * FROM `account` where user_id = '" + targetID + "' LIMIT 15";
 	System.out.println(sql);
 
 	//取得结果
 	String targetName=null;
 	rs = stmt.executeQuery(sql);
 	if (rs.next()){
-		targetName=rs.getString("UserName");
+		targetName=rs.getString("user_name");
 		out.print(targetName+" ");
 		out.print(rs.getString("sex")+" ");
-		out.print(rs.getString("birthYear")+"年");
-		out.print(rs.getString("birthMonth")+"月");
+		out.print(rs.getString("birth_year")+"年");
+		out.print(rs.getString("birth_month")+"月");
 	}%>
 	</p>
 	</div>
 	<%
-	sql= "SELECT statementID,releaseTime,content "
-		+				"FROM `teaching`.`statement` "
+	sql= "SELECT statement_id, release_time, content FROM `statement` "
 		+	"where userID='"+ targetID+"' "
-	+"order by releaseTime desc "
-	+"limit 0,10;";
+	+"order by release_time desc limit 0,10;";
 	
 	//取得结果
 	rs = stmt.executeQuery(sql);
@@ -164,27 +162,26 @@
 	<tr height="100">
 	<td width="500"><font size="4" color="black"><%out.print(rs.getString("content"));%></font>
 	</td>
-	<td width="110"><font size="3" color="gray"><%out.print(rs.getString("releaseTime"));%></font>
+	<td width="110"><font size="3" color="gray"><%out.print(rs.getString("release_time"));%></font>
 	</td>
-	<td width="60"><a href="javascript:reply('<%out.print(rs.getString("statementID"));%>')">回复</a><td>
+	<td width="60"><a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a><td>
 	</tr>
 	<%
-	String sql2="SELECT a.userID as userID,userName,commentID,releaseTime,content "
-		+				"FROM `teaching`.`account` as a, `teaching`.`comment` as b "
-		+	"where a.userID=b.userID and "
-		+	"b.statementID='"+ rs.getString("statementID")+"' "
-		+"order by releaseTime "
-		+"limit 0,10;";
+	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time, content "
+		+				"FROM `account` as a, `comment` as b "
+		+	"where a.user_id = b.user_id and "
+		+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
+		+"order by release_time limit 0,10;";
 	System.out.println(sql2);
 	ResultSet rs2 = stmt2.executeQuery(sql2);
 	while (rs2.next()){
 	%>
 	<tr height="">
 		
-	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("userID"));%>"><%out.print(rs2.getString("userName"));%></a>回复:</font>
+	<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><%out.print(rs2.getString("user_name"));%></a>回复:</font>
 	<font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
 	</td>
-	<td class="comment"  width="110"><font size="3" color="gray"><%out.print(rs2.getString("releaseTime"));%></font>
+	<td class="comment"  width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
 	</td>
 	<td  class="comment"  width="60"><td>
 	</tr>
@@ -194,8 +191,8 @@
 	%>
 	</table>
 	<div>
-	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statementID"));%>" value=""/>
-	<input type="button" style="display:none;" id="<%out.print(rs.getString("statementID"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statementID"));%>')"/>
+	<input style="display:none; height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
+	<input type="button" style="display:none;" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statementID"));%>')"/>
 	</div>
 	</div>
 	<%
