@@ -222,7 +222,7 @@
 	System.out.println(sql);
 
 	ResultSet rs = stmt.executeQuery(sql);
-	var head_id=rs.getString("avatar_index");
+	String head_id=rs.getString("avatar_index");
 	%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
