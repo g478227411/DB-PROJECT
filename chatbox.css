@@ -3,10 +3,9 @@
 #rphoto {float: right; width: 10%;}
 #rcontent {float: left; width: 90%;}
 .header {
-background-color:black;
-color:white;
 text-align:center;
 border-radius:15px;
+background-image: url("images/welcome2.jpg");
 }
 .header.left{float: left;width: 60%;}
 .header.right{float: left; width: 40%;}

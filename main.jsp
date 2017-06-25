@@ -227,7 +227,7 @@
 	<div class="header" >
 		<div class="header left">
 			<p>发表动态：</p>
-			<textarea type="text" id="statement" rows=6 cols=10 class="input_detail"></textarea>
+			<textarea type="text" id="statement" rows=8 cols=10 class="input_detail"></textarea>
 			<input type="button" value="发布" onclick="submitStatement()"/>
 		</div>
 			<div class="header right">
