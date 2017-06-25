@@ -232,17 +232,36 @@
 
 
 	<div id="header" >
-		<p>我想灌水：</p>
-		<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
-		<input type="button" value="发布" onclick="submitStatement()"/>
-		<br>
+		<div class="left">
+			<p>发表动态：</p>
+			<textarea type="text" id="statement" rows=4 cols=15 class="input_detail"></textarea>
+			<input type="button" value="发布" onclick="submitStatement()"/>
+		</div>
+			<div class="right">
+				<header id="desktop-header">
+					<span id="desktop-header-user">
+						Hi,  <a href="main.jsp"><%
+						rs = stmt.executeQuery(sql);
+						if (rs.next()){
+							out.println(rs.getString("user_name"));
+						}%></a>
+					</span>
+
+					<form action="search.jsp" method="post" id="desktop-header-search">
+						<input type="text" name="searchName" maxlength="20">
+						<input type="submit" value="查找好友">
+					</form>
+
+					<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
+				</header>
+			</div>
 	</div>
 
 	<div id="nav" >
 		<div class="bg">
-			<img src="fake-icon.png" class="head" alt="none"><!--%
+			<img src="fake-icon.png" class="head" alt="none"><%
 				 out.println(rs.getString("user_name"));
-			 %-->
+			 %>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
