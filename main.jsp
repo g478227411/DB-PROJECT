@@ -222,7 +222,7 @@
 	System.out.println(sql);
 
 	ResultSet rs = stmt.executeQuery(sql);
-	String head_id=rs.getString("avatar_index");
+	String head_id;
 	%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
@@ -274,6 +274,7 @@
 			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none"><%
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
+				head_id=rs.getString("avatar_index");
 			}%>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
