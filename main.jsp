@@ -295,7 +295,9 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 340px; width: 25%;
+	<div id="simple-example" style="
+		height: 340px;
+		width: 400px;
 		border-radius:20px;
 		position:fixed; 
 
