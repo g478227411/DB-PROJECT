@@ -24,6 +24,7 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<style type="text/css">
 		.style1 {
 			font-size: 18px;
@@ -38,33 +39,24 @@
 	</style>
 </head>
 
-<body bgcolor="papayawhip" width="300" height="300">
-	<center>
-		<div align="center" class="style1 style2">系 统 登 录
-		</div>
-		<form action="loginResponse.jsp" method="post">
-			<table border="2" bordercolor="black" bgcolor="">
-				<tbody>
-					<tr>
-						<td height="28">
-							<span class="style5">用户名</span>
-							<input type="text" name="userID" maxlength="20" style="width:150">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<span class="style5">密码</span>
-							<input type="password" name="passwd" maxlength="20" style="width:150">
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<div align="center">
-				<input type="submit" value="登录" />&nbsp;&nbsp;
-				<input type="button" value="注册" onclick="location.href='register.jsp'" />
-			</div>
-		</form>
-	</center>
+<body>
+	<div class="login-form">
+		<div class="avtar">
+		<img src="images/welcome3_1.jpg" /></div>
+	<form action="loginResponse.jsp" method="post">
+		<input type="user" class="text" value="UserID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserID';}" >
+		<!--<div class="key">
+			<input type="password" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		</div>-->
+		<input type="password" class="text" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+
+	</form>
+
+	<div class="col-sm-6">
+		<input type="submit" value="登陆" > &nbsp;&nbsp;</div>
+	<div class="col-sm-6">
+		<input type="button" value="注册" onclick="location.href='register.jsp'" /> </div>
+</div>
 </body>
 
 </html>
