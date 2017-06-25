@@ -44,7 +44,7 @@
 		<div class="avtar">
 		<img src="images/welcome3_1.jpg" /></div>
 	<form action="loginResponse.jsp" method="post">
-		<input name="userID" type="user" class="text" value="UserID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserID';}" >
+		<input name="userID" type="text" class="text" value="UserID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserID';}" >
 		<!--<div class="key">
 			<input type="password" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 		</div>-->
