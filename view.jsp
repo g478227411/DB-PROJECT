@@ -105,8 +105,8 @@
 </head>
 <body  >
 	<%
-	
-	ResultSet rs =null；
+
+	ResultSet rs =null;
 	String head_id=null;
 	%>
 	<div class="header">
