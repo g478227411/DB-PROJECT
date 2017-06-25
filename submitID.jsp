@@ -41,8 +41,8 @@
 		Statement stmt = conn.createStatement();
 
 		//要执行的 sql 查询
-		String sql = "UPDATE accounts SET avatar_index="+newID+" WHERE user_id= '"+userID+"';";
-		System.out.println("submitStatement.jsp");
+		String sql = "UPDATE `account` SET avatar_index="+newID+" WHERE user_id= '"+userID+"';";
+		System.out.println("submitID.jsp");
 		System.out.println(sql);
 		out.println(sql);
 		//取得结果
