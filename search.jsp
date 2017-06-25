@@ -1,4 +1,4 @@
-﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="checkvalid.jsp" %>
 <%@page import="java.util.*"%>
 <%@page import="com.mysql.jdbc.Driver"%>
@@ -79,7 +79,7 @@
 	<table>
 	<tr>
 	<td style="width:400">Hi, <a href="main.jsp"><%
-	sql= "SELECT * FROM `teaching`.`account` where userID='"+userID+"' LIMIT 15";
+	sql= "SELECT * FROM `account` where user_id = '" + userID + "' LIMIT 15";
 	System.out.println(sql);
 
 	//取得结果
