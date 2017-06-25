@@ -2,14 +2,14 @@
 #lcontent {float: right; width: 90%;}
 #rphoto {float: right; width: 10%;}
 #rcontent {float: left; width: 90%;}
-#left{float: left; width: 60%;}
-#right{float: right; width: 40%;}
-#header {
+.header {
 background-color:black;
 color:white;
 text-align:center;
 border-radius:15px;
 }
+.header.left{float: left;width: 60%;}
+.header.right{float: left; width: 40%;}
 #section {
   display:  inline;
 width:70%;
