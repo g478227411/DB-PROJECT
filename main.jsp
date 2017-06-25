@@ -295,12 +295,13 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px;
+	<div id="simple-example" style="padding: 5px; height: 340px; width: 25%;
+		border-radius:20px;
 		position:fixed; 
 
 		left:0px;
 		top:100px;
-		
+
 		display:block; 
 	 background-color: #E6E6E0;">
 <img src="heads/0.jpg" title="鼬~">
