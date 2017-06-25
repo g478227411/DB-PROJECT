@@ -222,7 +222,7 @@
 	System.out.println(sql);
 
 	ResultSet rs = stmt.executeQuery(sql);
-	String head_id;
+	int head_id;
 	%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
@@ -274,7 +274,7 @@
 			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none"><%
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
-				head_id=rs.getString("avatar_index");
+				head_id=rs.getInt("avatar_index");
 			}%>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
@@ -322,7 +322,7 @@
 		<div class="msg-list">
    <div id="lphoto">
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-  <img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+  <img src="heads/<% out.print(rs.getInt("avatar_index"));%>.jpg" class="head" alt="none">
   <p class="exl"><%out.print(rs.getString("user_name"));%></p>
 	</a>
 	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
@@ -362,7 +362,7 @@
   <div class="msg-list sender">
     <div id="rphoto">
    <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
-  <img src="heads/<%out.print(rs2.getString("avatar_index"));%>" class="head" alt="none">
+  <img src="heads/<%out.print(rs2.getInt("avatar_index"));%>" class="head" alt="none">
    <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
 	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
    </div>
