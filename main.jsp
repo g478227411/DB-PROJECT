@@ -301,7 +301,7 @@
 <div id="section">
 <div class="h1" >好友动态</div>
 	<%
-	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
+	sql= "SELECT a.user_id as user_id, user_name, statement_id, avatar_index,release_time, content "
 		+				"FROM `account` as a, `statement` as b "
 		+	"where a.user_id = b.user_id and ("
 		+	"(b.user_id='" + userID + "') "
@@ -348,7 +348,7 @@
 	<td width="40"><a href="javascript:reply('<%out.print(rs.getString("statement_id"));%>')">回复</a><td>
 </tr-->
 	<%
-	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time, content "
+	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time,avatar_index, content "
 		+				"FROM `account` as a, `comment` as b "
 		+	"where a.user_id = b.user_id and "
 		+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
