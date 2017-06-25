@@ -50,12 +50,12 @@
 		</div>-->
 		<input type="password" class="text" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 
-	</form>
 
 	<div class="col-sm-6">
 		<input type="submit" value="登陆" > &nbsp;&nbsp;</div>
 	<div class="col-sm-6">
 		<input type="button" value="注册" onclick="location.href='register.jsp'" /> </div>
+		</form>
 </div>
 </body>
 
