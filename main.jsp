@@ -298,8 +298,7 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; position:fixed; 
-	top:10px;left:200px;background-color: #E6E6E0;display:none">
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; background-color: #E6E6E0;display:none">
 <img src="heads/0.jpg" title="鼬~">
 <img src="heads/1.jpg" title="皮卡丘">
  <img src="heads/2.jpg" title="小缘喵">
