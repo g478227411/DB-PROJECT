@@ -190,6 +190,11 @@
 	</script>
 </head>
 <body>
+	<%
+	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+	System.out.println(sql);
+
+	ResultSet rs = stmt.executeQuery(sql);%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
 			<span id="mobile-header-user">
@@ -252,10 +257,6 @@
 	<div id="nav" >
 		<div class="bg">
 			<img src="fake-icon.png" class="head" alt="none"><%
-			sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-			System.out.println(sql);
-
-			ResultSet rs = stmt.executeQuery(sql);
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
 			}%>
