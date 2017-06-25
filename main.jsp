@@ -417,7 +417,6 @@ window.onload=function(){
 Display(); }
 </script-->
 </body>
-</html>
 <%
 
 		/** 关闭连接 **/
@@ -425,3 +424,8 @@ Display(); }
 		stmt.close();
 		rs.close();
 %>
+<script type="text/javascript">
+window.onload=function(){
+Display(); }
+</script>
+</html>
