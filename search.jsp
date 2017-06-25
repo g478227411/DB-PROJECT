@@ -119,7 +119,7 @@
 		<li>
 		<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>"><%out.print(rs.getString("user_id"));%></a> <%out.print(rs.getString("sex"));%> <%out.print(rs.getString("birth_year"));%>年<%out.print(rs.getString("birth_month"));%>月
 		
-		<span id="<%out.print(rs.getString("userID"));%>"><input type="button" value="加为好友" onclick="addFriend('<%out.print(rs.getString("user_id"));%>')" /></span>
+		<span id="<%out.print(rs.getString("user_id"));%>"><input type="button" value="加为好友" onclick="addFriend('<%out.print(rs.getString("user_id"));%>')" /></span>
 		
 		</li>
 		</div>
