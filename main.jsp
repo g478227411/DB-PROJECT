@@ -271,11 +271,14 @@
 			</div>
 			</div>
 	<div id="nav" >
-			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none"><%
-			if (rs.next()){
-				out.println(rs.getString("user_name"));
-				head_id=rs.getString("avatar_index");
-			}%>
+		<%
+		if (rs.next()){
+			head_id=rs.getString("avatar_index");
+			%>
+			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none">
+			<%
+			out.println(rs.getString("user_name"));
+		}%>
 			<div class="wall-of-buttons">
        <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
@@ -362,7 +365,7 @@
   <div class="msg-list sender">
     <div id="rphoto">
    <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
-  <img src="heads/<%out.print(rs2.getString("avatar_index"));%>" class="head" alt="none">
+  <img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
    <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
 	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
    </div>
