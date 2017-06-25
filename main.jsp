@@ -314,10 +314,10 @@ function Display()
 
  </div>
 
- <script type="text/javascript">
+ <!--script type="text/javascript">
 window.onload=function(){
 Display(); }
-</script>
+</script-->
 
 <div id="section">
 <div class="h1" >好友动态</div>
