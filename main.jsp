@@ -307,7 +307,7 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; font-size:20px;display:block;
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; font-size:20px;visibility:visible;
 	position:fixed;	top:180px; background-color: #E6E6E0">
 <img src="heads/0.jpg" title="点击头像可以换呦，你现在的头像是：鼬~">
 <img src="heads/1.jpg" title="点击头像可以换呦，你现在的头像是：皮卡丘">
@@ -323,11 +323,6 @@ function Display()
 
  </div>
 
- <script type="text/javascript">
- window.onload=function(){
- Display();
-}
- </script>
 
 <div id="section">
 <div class="h1" >好友动态</div>
@@ -426,6 +421,11 @@ function Display()
 	}
 	%>
 </div>
+<script type="text/javascript">
+window.onload=function(){
+Visibility();
+}
+</script>
 </body>
 <%
 
