@@ -111,7 +111,6 @@
 	%>
 	<div class="header">
 			<div class="header left">
-				<p width="700">
 				<%
 				sql= "SELECT * FROM `account` where user_id = '" + targetID + "' LIMIT 15";
 				System.out.println(sql);
@@ -126,13 +125,11 @@
 					%>
 
 <img src="heads/<% out.print(targethead);%>.jpg" class="head" alt="none" >
-<%
-					out.print(targetName+" ");
-					out.print(rs.getString("sex")+" ");
-					out.print(rs.getString("birth_year")+"年");
-					out.print(rs.getString("birth_month")+"月");
-				}%>
-				</p>
+<p>我的名字是<%out.print(targetName+" ");%>~</p>
+<p>我的性别是：<%out.print(rs.getString("sex")+" ");%></p>
+<p>我出生在<%out.print(rs.getString("birth_year")+"年");%>
+<%out.print(rs.getString("birth_month")+"月");
+}%></p>
 			</div>
 				<div class="header center">
 
