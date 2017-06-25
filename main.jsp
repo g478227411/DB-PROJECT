@@ -280,7 +280,7 @@
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; background-color: #E6E6E0">
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; background-color: #E6E6E0;display:none">
 <img src="heads/0.jpg" title="鼬~">
 <img src="heads/1.jpg" title="皮卡丘">
  <img src="heads/2.jpg" title="小缘喵">
@@ -294,7 +294,7 @@
 <img src="heads/10.jpg" title="虐狗2">
 
  </div>
- 
+
 <div id="section">
 <div class="h1" >好友动态</div>
 	<%
