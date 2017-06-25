@@ -125,9 +125,9 @@
 					%>
 
 <img src="heads/<% out.print(targethead);%>.jpg" class="head" alt="none" >
-<p>我的名字是<%out.print(targetName+" ");%>~</p>
-<p>我的性别是：<%out.print(rs.getString("sex")+" ");%></p>
-<p>我出生在<%out.print(rs.getString("birth_year")+"年");%>
+<p class="exl">我的名字是<%out.print(targetName+" ");%>~</p>
+<p class="exl">我的性别是：<%out.print(rs.getString("sex")+" ");%></p>
+<p class="exl">我出生在<%out.print(rs.getString("birth_year")+"年");%>
 <%out.print(rs.getString("birth_month")+"月");
 }%></p>
 			</div>
