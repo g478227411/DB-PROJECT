@@ -189,6 +189,21 @@ function Display()
 				alert("请输入内容！");
 			}
 		}
+		function submitID(){
+				var xmlhttp = new XMLHttpRequest();
+				if (xmlhttp != null){
+					xmlhttp.onreadystatechange=function(){
+						if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+							window.location.reload();
+						}
+					}
+					strInput="submitID.jsp?ID="+ID;
+					strInput=encodeURI(strInput);
+					strInput=encodeURI(strInput);
+					xmlhttp.open("GET", strInput, true);
+					xmlhttp.send();
+				}
+		}
 		function reply(statementID){
 			var statementDoc=document.getElementById(statementID);
 			if(statementDoc.style.display=="none"){
@@ -297,7 +312,7 @@ function Display()
 
 	<div id="simple-example" style="
 		height: 340px;
-		width: 400px;
+		width: 340px;
 		border-radius:20px;
 		position:fixed; 
 
@@ -317,7 +332,7 @@ function Display()
 <img src="heads/8.jpg" title="基德">
 <img src="heads/9.jpg" title="虐狗1">
 <img src="heads/10.jpg" title="虐狗2">
-	<input type="button"  value="就选它了！" onclick="Display()">
+	<input type="button"  value="就选它了！" onclick="submitID()">
 </div>
  <script type="text/javascript">
 window.onload=function(){

@@ -25,6 +25,8 @@
  *
  */
 
+var ID = 0;  //全局变量
+
 Ext.ns('Ext.ux');
 
 Ext.ux.Carousel = Ext.extend(Ext.util.Observable, {
@@ -45,6 +47,7 @@ Ext.ux.Carousel = Ext.extend(Ext.util.Observable, {
     constructor: function(elId, config) {
         config = config || {};
         Ext.apply(this, config);
+
 
         Ext.ux.Carousel.superclass.constructor.call(this, config);
 
@@ -123,6 +126,7 @@ Ext.ux.Carousel = Ext.extend(Ext.util.Observable, {
             var target = ev.getTarget();
             target.blur();
             if(Ext.fly(target).hasClass('ux-carousel-nav-disabled')) return;
+            ID--;
             this.prev();
         }, this);
 
@@ -131,6 +135,7 @@ Ext.ux.Carousel = Ext.extend(Ext.util.Observable, {
             var target = ev.getTarget();
             target.blur();
             if(Ext.fly(target).hasClass('ux-carousel-nav-disabled')) return;
+            ID++;
             this.next();
         }, this);
 
