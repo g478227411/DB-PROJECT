@@ -125,9 +125,9 @@
 					%>
 
 <img src="heads/<% out.print(targethead);%>.jpg" class="head" alt="none" >
-<p class="exl">我的名字是<%out.print(targetName+" ");%>~</p>
-<p class="exl">我的性别是：<%out.print(rs.getString("sex")+" ");%></p>
-<p class="exl">我出生在<%out.print(rs.getString("birth_year")+"年");%>
+<p class="exr">我的名字是<%out.print(targetName+" ");%>~</p>
+<p class="exr">我的性别是：<%out.print(rs.getString("sex")+" ");%></p>
+<p class="exr">我出生在<%out.print(rs.getString("birth_year")+"年");%>
 <%out.print(rs.getString("birth_month")+"月");
 }%></p>
 			</div>
@@ -213,7 +213,7 @@
 				    <div id="rphoto">
 				   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
 				  <img src="heads/<% out.print(rs2.getString("avatar_index"));%>.jpg" class="head" alt="none">
-				   <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
+				   <p class="exl"><%out.print(rs2.getString("user_name"));%></p></a>
 					 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
 				   </div>
 				   <div id="rcontent">
