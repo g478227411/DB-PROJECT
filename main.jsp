@@ -313,7 +313,7 @@ function Display()
 <img src="heads/9.jpg" title="虐狗1">
 <img src="heads/10.jpg" title="虐狗2">
 	<input type="button"  value="就选它了！" >
-
+</div>
  <script type="text/javascript">
 window.onload=function(){
 Display(); }
