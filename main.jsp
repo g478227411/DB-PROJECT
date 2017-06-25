@@ -58,15 +58,12 @@
 <script>
 function Display()
 {
-    var divD = document.getElementById("simple-example");
-    if(divD.style.display=="none")
-    {
-        divD.style.display = "block";   /*****可见****/
-    }
-    else
-    {
-        divD.style.display = "none";    /*****不可见****/
-    }
+	var divV = document.getElementById("simple-example");
+	if(divV.style.visibility =="hidden"){
+			divV.style.visibility ="visible";
+	 }else{
+			divV.style.visibility = "hidden";
+	}
 }
             Ext.onReady(function() {
                 new Ext.ux.Carousel('simple-example');
@@ -314,6 +311,10 @@ function Display()
 
  </div>
 
+ <script type="text/javascript">
+ window.onload=function(){
+ Display(); }
+ </script>
 
 <div id="section">
 <div class="h1" >好友动态</div>
@@ -412,10 +413,6 @@ function Display()
 	}
 	%>
 </div>
-<!--script type="text/javascript">
-window.onload=function(){
-Display(); }
-</script-->
 </body>
 <%
 
@@ -424,8 +421,4 @@ Display(); }
 		stmt.close();
 		rs.close();
 %>
-<script type="text/javascript">
-window.onload=function(){
-Display(); }
-</script>
 </html>
