@@ -105,10 +105,7 @@
 </head>
 <body  >
 	<%
-	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-	System.out.println(sql);
-
-	ResultSet rs1 = stmt.executeQuery(sql);
+	
 	ResultSet rs =null；
 	String head_id=null;
 	%>
@@ -152,6 +149,10 @@
 
 				<div id="nav" >
 					<%
+					sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+					System.out.println(sql);
+
+					ResultSet rs1 = stmt.executeQuery(sql);
 					if (rs1.next()){
 						head_id=rs1.getString("avatar_index");
 						%>
