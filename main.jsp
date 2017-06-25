@@ -255,7 +255,7 @@
 </div>
 	</div>
 <div id="section">
-<h1 >好友动态</h1>
+<div class="h1" >好友动态</div>
 	<%
 	sql= "SELECT a.user_id as user_id, user_name, statement_id, release_time, content "
 		+				"FROM `account` as a, `statement` as b "
