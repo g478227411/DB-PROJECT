@@ -242,7 +242,6 @@
 			</div>
 			</div>
 	<div id="nav" >
-		<div class="bg">
 			<img src="fake-icon.png" class="head" alt="none"><%
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
@@ -251,7 +250,6 @@
        <P><a class="large blue button">我的关注</a></P>
        <P><a class="large green button">我的粉丝</a></P>
 			 <br>
-</div>
 </div>
 	</div>
 <div id="section">

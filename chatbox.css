@@ -50,6 +50,8 @@ padding:5px;
     border-radius: 60px;
 }
 #nav {
+background-image: url(images/bg4.jpg);
+border-radius:20px;
 position:fixed;  
 top:150px;
 left:10px;
