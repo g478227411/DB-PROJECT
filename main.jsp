@@ -225,12 +225,12 @@
 
 
 	<div id="header" >
-		<div class="left">
+		<div id="left">
 			<p>发表动态：</p>
 			<textarea type="text" id="statement" rows=4 cols=10 class="input_detail"></textarea>
 			<input type="button" value="发布" onclick="submitStatement()"/>
 		</div>
-			<div class="right">
+			<div id="right">
 
 					<form action="search.jsp" method="post" id="desktop-header-search">
 						<input type="text" name="searchName" maxlength="20">
