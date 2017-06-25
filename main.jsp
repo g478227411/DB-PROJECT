@@ -203,6 +203,7 @@ function Display()
 					xmlhttp.open("GET", strInput, true);
 					xmlhttp.send();
 				}
+				Display();
 		}
 		function reply(statementID){
 			var statementDoc=document.getElementById(statementID);
