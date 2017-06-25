@@ -1,0 +1,54 @@
+.ux-carousel-container {
+	OVERFLOW: hidden; POSITION: relative
+}
+.ux-carousel-slides-wrap {
+	LEFT: 0px; POSITION: absolute; TOP: 0px
+}
+.ux-carousel-slide {
+	FLOAT: left; OVERFLOW: hidden; TEXT-ALIGN: center
+}
+.ux-carousel-nav {
+	FILTER: alpha(opacity=70); LEFT: 0px; WIDTH: 100%; POSITION: absolute; TOP: 0px; HEIGHT: 29px; BACKGROUND-COLOR: #d1ccc7; opacity: 0.7
+}
+.ux-carousel-caption {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-SIZE: 20px; FLOAT: left; PADDING-BOTTOM: 2px; MARGIN: 0px; OVERFLOW: hidden; TEXT-TRANSFORM: none; WIDTH: 100px; COLOR: black; PADDING-TOP: 2px; HEIGHT: 29px
+}
+.ux-carousel-nav-prev {
+	BACKGROUND-POSITION: 0px 24px; DISPLAY: block; FLOAT: right; MARGIN: 2px 0px; HEIGHT: 24px
+}
+.ux-carousel-nav-next {
+	BACKGROUND-POSITION: 0px 24px; DISPLAY: block; FLOAT: right; MARGIN: 2px 0px; HEIGHT: 24px
+}
+.ux-carousel-nav-play {
+	BACKGROUND-POSITION: 0px 24px; DISPLAY: block; FLOAT: right; MARGIN: 2px 0px; HEIGHT: 24px
+}
+.ux-carousel-nav .ux-carousel-nav-prev {
+	BACKGROUND-IMAGE: url(../images/prev.png); WIDTH: 31px
+}
+.ux-carousel-nav .ux-carousel-nav-next {
+	BACKGROUND-IMAGE: url(../images/next.png); WIDTH: 30px; MARGIN-RIGHT: 2px
+}
+.ux-carousel-nav-play {
+	BACKGROUND-IMAGE: url(../images/play_pause.png); WIDTH: 24px
+}
+.ux-carousel-nav-play:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+.ux-carousel-playing.ux-carousel-nav-play {
+	BACKGROUND-POSITION: 24px 24px
+}
+.ux-carousel-playing.ux-carousel-nav-play:hover {
+	BACKGROUND-POSITION: 24px 0px
+}
+.ux-carousel-nav-prev:hover {
+	BACKGROUND-POSITION: 0px 48px
+}
+.ux-carousel-nav-next:hover {
+	BACKGROUND-POSITION: 0px 48px
+}
+.ux-carousel-nav-disabled.ux-carousel-nav-prev {
+	BACKGROUND-POSITION: 0px 0px
+}
+.ux-carousel-nav-disabled.ux-carousel-nav-next {
+	BACKGROUND-POSITION: 0px 0px
+}

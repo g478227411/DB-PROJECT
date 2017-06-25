@@ -51,6 +51,33 @@
 <head>
 	<meta charset=utf-8>
 	<title>WELCOME TO MY HOMEPAGE</title>
+	<link href="css/examples.css" rel="stylesheet" />
+<link href="css/carousel.css" rel="stylesheet" />
+<script src="js/ext-core-debug.js"></script>
+<script src="js/carousel.js"></script>
+<script>
+            Ext.onReady(function() {
+                new Ext.ux.Carousel('simple-example');
+
+                new Ext.ux.Carousel('full-example', {
+                    itemSelector: 'img',
+                    interval: 3,
+                    autoPlay: true,
+                    showPlayButton: true,
+                    pauseOnNavigate: true,
+                    freezeOnHover: true,
+                    transitionType: 'fade',
+                    navigationOnHover: true
+                });
+
+                new Ext.ux.Carousel('html-example', {
+                    itemSelector: 'div.item',
+                    interval: 5,
+                    autoPlay: true,
+                    transitionEasing: 'easeIn'
+                });
+            })
+        </script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="chatbox.css" media="screen" >
@@ -252,6 +279,22 @@
 			 <br>
 </div>
 	</div>
+
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; background-color: #E6E6E0">
+<img src="heads/0.jpg" title="鼬~">
+<img src="heads/1.jpg" title="皮卡丘">
+ <img src="heads/2.jpg" title="小缘喵">
+ <img src="heads/3.jpg" title="喵">
+ <img src="heads/4.jpg" title="龙马">
+<img src="heads/5.jpg" title="初音">
+<img src="heads/6.jpg" title="小黄鸟">
+<img src="heads/7.jpg" title="萝莉">
+<img src="heads/8.jpg" title="基德">
+<img src="heads/9.jpg" title="虐狗1">
+<img src="heads/10.jpg" title="虐狗2">
+
+ </div>
+ 
 <div id="section">
 <div class="h1" >好友动态</div>
 	<%
