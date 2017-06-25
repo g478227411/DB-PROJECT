@@ -361,7 +361,7 @@
   <div class="msg-list sender">
     <div id="rphoto">
    <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
-  <img src="heads/<%out.print(rs2.getString("avatar_index"))" class="head" alt="none">
+  <img src="heads/<%out.print(rs2.getString("avatar_index"));" class="head" alt="none">
    <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
 	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
    </div>
