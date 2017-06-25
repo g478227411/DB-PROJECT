@@ -307,25 +307,25 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; display:none;
-	position:fixed; top:10px;left:200px; background-color: #E6E6E0">
-<img src="heads/0.jpg" title="鼬~">
-<img src="heads/1.jpg" title="皮卡丘">
- <img src="heads/2.jpg" title="小缘喵">
- <img src="heads/3.jpg" title="喵">
- <img src="heads/4.jpg" title="龙马">
-<img src="heads/5.jpg" title="初音">
-<img src="heads/6.jpg" title="小黄鸟">
-<img src="heads/7.jpg" title="萝莉">
-<img src="heads/8.jpg" title="基德">
-<img src="heads/9.jpg" title="虐狗1">
-<img src="heads/10.jpg" title="虐狗2">
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; display:block;
+	position:fixed;	left:10px;	top:180px; background-color: #E6E6E0">
+<img src="heads/0.jpg" title="点击头像可以换呦，你现在的头像是：鼬~">
+<img src="heads/1.jpg" title="点击头像可以换呦，你现在的头像是：皮卡丘">
+ <img src="heads/2.jpg" title="点击头像可以换呦，你现在的头像是：小缘喵">
+ <img src="heads/3.jpg" title="点击头像可以换呦，你现在的头像是：喵">
+ <img src="heads/4.jpg" title="点击头像可以换呦，你现在的头像是：龙马">
+<img src="heads/5.jpg" title="点击头像可以换呦，你现在的头像是：初音">
+<img src="heads/6.jpg" title="点击头像可以换呦，你现在的头像是：小黄鸟">
+<img src="heads/7.jpg" title="点击头像可以换呦，你现在的头像是：萝莉">
+<img src="heads/8.jpg" title="点击头像可以换呦，你现在的头像是：基德">
+<img src="heads/9.jpg" title="点击头像可以换呦，你现在的头像是：虐狗1">
+<img src="heads/10.jpg" title="点击头像可以换呦，你现在的头像是：虐狗2">
 
  </div>
 
  <script type="text/javascript">
  window.onload=function(){
- Display();Visibility();}
+ Visibility();}
  </script>
 
 <div id="section">
