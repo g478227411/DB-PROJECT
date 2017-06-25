@@ -56,6 +56,7 @@
   <link rel="stylesheet" href="chatbox.css" media="screen" >
 		<link href="playground.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="blingbling.css" media="all" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<style>
 		@media (max-width: 29.99em) {
 
