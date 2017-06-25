@@ -298,7 +298,7 @@ function Display()
 	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px;
 		position:fixed; 
 		left:10px;
-		top:180px;
+		top:150px;
 		display:block; 
 	 background-color: #E6E6E0;">
 <img src="heads/0.jpg" title="鼬~">
@@ -312,7 +312,7 @@ function Display()
 <img src="heads/8.jpg" title="基德">
 <img src="heads/9.jpg" title="虐狗1">
 <img src="heads/10.jpg" title="虐狗2">
-	<input type="button"  value="就选它了！" >
+	<input type="button"  value="就选它了！" onclick="Display()">
 </div>
  <script type="text/javascript">
 window.onload=function(){
