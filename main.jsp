@@ -297,8 +297,10 @@ function Display()
 
 	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px;
 		position:fixed; 
-		left:10px;
-		top:150px;
+
+		left:0px;
+		top:100px;
+		
 		display:block; 
 	 background-color: #E6E6E0;">
 <img src="heads/0.jpg" title="鼬~">
