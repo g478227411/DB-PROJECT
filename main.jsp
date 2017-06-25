@@ -347,9 +347,7 @@ Display(); }
 		+				"FROM `account` as a, `statement` as b "
 		+	"where a.user_id = b.user_id and ("
 		+	"(b.user_id='" + userID + "') "
-		+	"or b.user_id in ( "
-		+		"SELECT user_id from `friends` where friend_id = '" + userID + "'"
-		+	")or b.user_id in("
+		+	"or b.user_id in("
 		+		"SELECT friend_id from `friends` where user_id = '" + userID + "'"
 		+	") "
 		+") ORDER BY release_time DESC LIMIT 0,10;";
