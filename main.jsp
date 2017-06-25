@@ -325,7 +325,8 @@ function Display()
 
  <script type="text/javascript">
  window.onload=function(){
- Visibility();}
+ Display();
+}
  </script>
 
 <div id="section">
