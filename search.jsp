@@ -85,7 +85,7 @@
 	//取得结果
 	ResultSet rs = stmt.executeQuery(sql);
 	if (rs.next()){
-		out.println(rs.getString("UserName"));
+		out.println(rs.getString("user_name"));
 	}%></a>
 	</td>
 	<td style="width:300">
