@@ -58,15 +58,12 @@
 <script>
 function Display()
 {
-    var divD = document.getElementById("simple-example");
-    if(divD.style.display=="none")
-    {
-        divD.style.display = "block";   /*****可见****/
-    }
-    else
-    {
-        divD.style.display = "none";    /*****不可见****/
-    }
+	var divV = document.getElementById("simple-example");
+	if(divV.style.visibility =="hidden"){
+			divV.style.visibility ="visible";
+	 }else{
+			divV.style.visibility = "hidden";
+	}
 }
             Ext.onReady(function() {
                 new Ext.ux.Carousel('simple-example');
@@ -298,7 +295,7 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; display:none; 
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; visibility:hidden;
 	top:10px;left:200px;background-color: #E6E6E0">
 <img src="heads/0.jpg" title="鼬~">
 <img src="heads/1.jpg" title="皮卡丘">
