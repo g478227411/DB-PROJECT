@@ -52,10 +52,10 @@ padding:5px;
 #nav {
 background-image: url(images/bg4.jpg);
 border-radius:20px;
-position:fixed;  
-top:10px;
+position:absolute; 
+top:80px;
 left:10px;
-line-height:40px;
+line-height:50px;
 border:3px solid #000;
 width:20%;
 float:left;
