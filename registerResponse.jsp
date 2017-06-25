@@ -16,7 +16,7 @@
 	if(request.getParameter("birthMonth")!=null){
 		String userID=request.getParameter("userID");
 		String passwd=request.getParameter("passwd");
-		String userName= java.net.URLDecoder.decode(request.getParameter("userName"),"UTF-8");//获取请求参数  
+		String userName= java.net.URLDecoder.decode(request.getParameter("userName"),"UTF-8");//获取请求参数
 		String sex=request.getParameter("sex");
 		int birthYear = Integer.parseInt(request.getParameter("birthYear"));
 		int birthMonth = Integer.parseInt(request.getParameter("birthMonth"));
@@ -52,7 +52,7 @@
 		//取得结果
 		ResultSet rs = stmt.executeQuery(sql);
 		if (!rs.next()){
-			sql = "INSERT INTO `" + DBName + "`.`account` VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
+			sql = "INSERT INTO `" + DBName + "`.`account` (user_id,password,sex,birthYear,birthMonth) VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
 			System.out.println(sql);
 			stmt.execute(sql);
 			ok=1;
@@ -70,12 +70,12 @@ if (ok==1){
 	out.println("<p>注册成功！！</p>");
 	out.println("<p>5秒后返回<a href=\"login.jsp\">登陆</a>页面！</p>");
 	String content=5+";URL="+"login.jsp";
-	response.setHeader("REFRESH",content); 
+	response.setHeader("REFRESH",content);
 }else{
 	out.println("<p>该用户名已占用！</p>");
 	out.println("<p>5秒后返回注册页面！！</p>");
 	String content=5+";URL="+"register.jsp";
-	response.setHeader("REFRESH",content); 
+	response.setHeader("REFRESH",content);
 }
 %>
 </body>
