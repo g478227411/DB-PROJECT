@@ -230,13 +230,14 @@
 			<textarea type="text" id="statement" rows=8 cols=10 class="input_detail"></textarea>
 			<input type="button" value="发布" onclick="submitStatement()"/>
 		</div>
-			<div class="header right">
+			<div class="header center">
 
 					<form action="search.jsp" method="post" id="desktop-header-search">
 						<input type="text" name="searchName" maxlength="20">
 						<input type="submit" value="查找好友">
 					</form>
-
+				</div>
+					<div class="header right">
 					<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 
 			</div>

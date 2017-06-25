@@ -5,10 +5,11 @@
 .header {
 text-align:center;
 border-radius:15px;
-background-image: url("images/welcome2.jpg");
+background-image: url(images/bg2.jpg);
 }
-.header.left{float: left;width: 60%;}
-.header.right{float: left; width: 40%;}
+.header.left{float: left;width: 50%;}
+.header.center{float: left; width: 30%;}
+.header.right{float: left; width: 20%;}
 #section {
   display:  inline;
 width:70%;
@@ -69,7 +70,7 @@ h1{
   font-family:Arial,Verdana,Sans-serif;
   font-size:20px;
   text-align: center;
-  background-image: url(2.jpg);
+  background-image: url(images/bg2.jpg);
 }
 
 .linear{
