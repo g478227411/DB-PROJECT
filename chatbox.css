@@ -11,20 +11,14 @@ height: 50px；
 .header.left{float: left;width: 50%;}
 .header.center{float: left; width: 30%;}
 .header.right{float: left; width: 20%;}
+
 #section {
-  display:  inline;
-width:70%;
-float:right;
-padding:10px;
-border-radius:5px;
-FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#b8c4cb,endColorStr=red); /*IE 6 7 8*/ 
-background: -ms-linear-gradient(top, #fff,  #0000ff);        /* IE 10 */
-background:-moz-linear-gradient(top,#b8c4cb,#f6f6f8);/*火狐*/ 
-background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#b8c4cb), to(#f6f6f8));/*谷歌*/ 
-background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#0000ff));      /* Safari 4-5, Chrome 1-9*/
-background: -webkit-linear-gradient(top, #fff, #0000ff);   /*Safari5.1 Chrome 10+*/
-background: -o-linear-gradient(top, #fff, #0000ff);  /*Opera 11.10+*/
+  width: 70%;
+  float: right;
+  padding: 10px;
+  border-radius: 5px;
 }
+
 #footer {
 background-color:black;
 color:white;
@@ -32,6 +26,7 @@ clear:both;
 text-align:center;
 padding:5px;
 }
+
 #aside{
   background-image: url(../img/1.gif);
   line-height:30px;
@@ -52,7 +47,7 @@ padding:5px;
 #nav {
 background-image: url(images/bg4.jpg);
 border-radius:20px;
-position:fixed; 
+position:fixed;
 left:10px;
 top:200px;
 line-height:50px;
@@ -85,24 +80,19 @@ p.exl {font-size:12px;
 .linear{
 	width:100%;
   border-radius:5px;
-	FILTER: progid:DXImageTransform.Microsoft.Gradient(gradientType=0,startColorStr=#b8c4cb,
-endColorStr=#f6f6f8); /*IE*/
-	background:-moz-linear-gradient(top,#b8c4cb,#f6f6f8);/*火狐*/
-	background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#b8c4cb), to(#f6f6f8));/*谷歌*/
+	background: linear-gradient(to bottom, #b8c4cb, #f6f6f8);
 }
 
 .head{
   box-shadow: 2px 2px 2px rgba(0,0,0,0.7);
   border:5px solid rgba(0,0,0,0.4);
   width:48px;
-  height:48px;'
+  height:48px;
   background-clip: padding-box;
   background-size: cover;
   background-repeat: no-repeat;
   display: block;
   border-radius: 50%;
-  -webkit-border-radius:100px;
-  -moz-border-radius:100px;
 }
 .msg-list {
         width: 100%;
@@ -140,26 +130,27 @@ endColorStr=#f6f6f8); /*IE*/
       margin: 0px;
       height:0px;
   }
-     .messenger-container::before {
-         width: 0px;
-         height: 0px;
-         border-top: 8px solid transparent;
-         border-bottom: 8px solid transparent;
+.messenger-container::before {
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
 
-         border-right:15px solid #f2f2f2;
-         content: "";
-         position: absolute;
-         top: 9px;
-         left: -15px;
-     }
-  .sender .messenger-container::before {
-        width: 0px;
-        height: 0px;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
-        border-left: 15px solid #D5DBFF;
-        content: "";
-        position: absolute;
-        top: 9px;
-        left: 99%;border-right: none;
- }
+  border-right:15px solid #f2f2f2;
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: -15px;
+}
+.sender .messenger-container::before {
+  width: 0px;
+  height: 0px;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 15px solid #D5DBFF;
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 99%;
+  border-right: none;
+}
