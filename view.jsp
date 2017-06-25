@@ -104,13 +104,6 @@
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body  >
-	<%
-	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-	System.out.println(sql);
-
-	ResultSet rs = stmt.executeQuery(sql);
-	String head_id=null;
-	%>
 	<div class="header">
 			<div class="header left">
 				<p width="700">
@@ -148,6 +141,14 @@
 
 				</div>
 				</div>
+
+				<%
+				sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+				System.out.println(sql);
+
+				rs = stmt.executeQuery(sql);
+				String head_id=null;
+				%>
 				<div id="nav" >
 					<%
 					if (rs.next()){
