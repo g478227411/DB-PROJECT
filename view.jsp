@@ -144,7 +144,7 @@
 	</div>
 	<%
 	sql= "SELECT statement_id, release_time, content FROM `statement` "
-		+	"where userID='"+ targetID+"' "
+		+	"where user_id = '"+ targetID+"' "
 	+"order by release_time desc limit 0,10;";
 	
 	//取得结果
