@@ -163,68 +163,88 @@
 						 <br>
 			</div>
 				</div>
-	<%
-	sql= "SELECT statement_id, release_time, content FROM `statement` "
-		+	"where user_id = '"+ targetID+"' "
-	+"order by release_time desc limit 0,10;";
+				<div id="section">
+				<div class="h1" >好友动态</div>
+					<%
+					sql= "SELECT a.user_id as user_id, user_name, statement_id, avatar_index,release_time, content "
+						+				"FROM `account` as a, `statement` as b "
+						+	"where a.user_id = b.user_id and ("
+						+	"(b.user_id='" + targetID + "') "
+						+	"or b.user_id in("
+						+		"SELECT friend_id from `friends` where user_id = '" + targetID + "'"
+						+	") "
+						+") ORDER BY release_time DESC LIMIT 0,10;";
+					System.out.println(sql);
+					//取得结果
+					rs = stmt.executeQuery(sql);
 
-	//取得结果
-	rs = stmt.executeQuery(sql);
-	while (rs.next()){
-	%>
-	<div class="linear">
-	<div class="clear"></div>
-		<div class="msg-list">
-   <div id="lphoto">
-		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-  <img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
-  <p class="exl"><%out.print(rs.getString("user_name"));%></p>
-	</a>
-	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
-  </div>
-  <div id="lcontent">
-      <div class="messenger-container">
-      <p><%out.print(rs.getString("content"));%></p>
-      </div>
-      </div>
-  </div>
-	<%
-	String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time,avatar_index, content "
-		+				"FROM `account` as a, `comment` as b "
-		+	"where a.user_id = b.user_id and "
-		+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
-		+"ORDER BY release_time LIMIT 0,10;";
-	System.out.println(sql2);
-	ResultSet rs2 = stmt2.executeQuery(sql2);
-	while (rs2.next()){
-	%>
+					while (rs.next()){
+					%>
+					<div class="linear">
+					<div class="clear"></div>
+						<div class="msg-list">
+				   <div id="lphoto">
+						 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
+				  <img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+				  <p class="exl"><%out.print(rs.getString("user_name"));%></p>
+					</a>
+					<p class="exl"><%out.print(rs.getString("release_time"));%></p>
 
-	<div class="clear"></div>
-  <div class="msg-list sender">
-    <div id="rphoto">
-   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
-  <img src="heads/<% out.print(rs2.getString("avatar_index"));%>.jpg" class="head" alt="none">
-   <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
-	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
-   </div>
-   <div id="rcontent">
-      <div class="messenger-container">
-          <p><%out.print(rs2.getString("content"));%></p>
-      </div>
-		</div>
-  </div>
-	rs2.close();
-	%>
-<!--/table-->
-	<div style="text-align:center;">
-		评论：
-	<input style=" height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
-	<input type="button" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
-	</div>
-	</div>
-	<%
-	}
-	%>
+				  </div>
+				  <div id="lcontent">
+				      <div class="messenger-container">
+				      <p><%out.print(rs.getString("content"));%></p>
+				      </div>
+				      </div>
+				  </div>
+					<%
+					String sql2="SELECT a.user_id as user_id, user_name, comment_id, release_time,avatar_index, content "
+						+				"FROM `account` as a, `comment` as b "
+						+	"where a.user_id = b.user_id and "
+						+	"b.statement_id = '"+ rs.getString("statement_id")+"' "
+						+"ORDER BY release_time LIMIT 0,10;";
+					System.out.println(sql2);
+					ResultSet rs2 = stmt2.executeQuery(sql2);
+					while (rs2.next()){
+					%>
+
+					<div class="clear"></div>
+				  <div class="msg-list sender">
+				    <div id="rphoto">
+				   <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
+				  <img src="heads/<% out.print(rs2.getString("avatar_index"));%>.jpg" class="head" alt="none">
+				   <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
+					 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
+				   </div>
+				   <div id="rcontent">
+				      <div class="messenger-container">
+				          <p><%out.print(rs2.getString("content"));%></p>
+				      </div>
+						</div>
+				  </div>
+					<!--tr height="">
+
+					<td class="comment" width="500"><font size="3" color="black"><a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>"><img src="fake-icon.png"><%out.print(rs2.getString("user_name"));%></a>回复: </font><font size="4" color="black"><%out.print(rs2.getString("content"));%></font>
+					</td>
+					<td  class="comment" width="110"><font size="3" color="gray"><%out.print(rs2.getString("release_time"));%></font>
+					</td>
+					<td  class="comment" width="60"><td>
+					</tr-->
+					<%
+					}
+					rs2.close();
+					%>
+				<!--/table-->
+					<div style="text-align:center;">
+						评论：
+					<input style=" height:25;width:500" id="<%out.print(rs.getString("statement_id"));%>" value=""/>
+					<input type="button" id="<%out.print(rs.getString("statement_id"));%>Button" value="确定" onclick="submitReply('<%out.print(rs.getString("statement_id"));%>')"/>
+					</div>
+					</div>
+					<%
+					}
+					%>
+				</div>
 </body>
 </html>
 <%
