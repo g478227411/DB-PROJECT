@@ -56,7 +56,7 @@
 <script src="js/ext-core-debug.js"></script>
 <script src="js/carousel.js"></script>
 <script>
-function Display()
+function Visibility()
 {
 	var divV = document.getElementById("simple-example");
 	if(divV.style.visibility =="hidden"){
@@ -64,6 +64,18 @@ function Display()
 	 }else{
 			divV.style.visibility = "hidden";
 	}
+}
+function Display()
+{
+    var divD = document.getElementById("simple-example");
+    if(divD.style.display=="none")
+    {
+        divD.style.display = "block";   /*****可见****/
+    }
+    else
+    {
+        divD.style.display = "none";    /*****不可见****/
+    }
 }
             Ext.onReady(function() {
                 new Ext.ux.Carousel('simple-example');
@@ -313,7 +325,7 @@ function Display()
 
  <script type="text/javascript">
  window.onload=function(){
- Display(); }
+ Visibility();Display(); }
  </script>
 
 <div id="section">
