@@ -416,6 +416,10 @@ Display(); }
 	}
 	%>
 </div>
+<script type="text/javascript">
+window.onload=function(){
+Display(); }
+</script>
 </body>
 </html>
 <%
