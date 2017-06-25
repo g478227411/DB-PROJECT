@@ -1,4 +1,4 @@
-﻿<%@page language="java" pageEncoding="UTF-8"%>
+<%@page language="java" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
 <%@page import="com.mysql.jdbc.Driver"%>
 <%@page import="java.sql.*"%>
@@ -52,7 +52,7 @@
 		//取得结果
 		ResultSet rs = stmt.executeQuery(sql);
 		if (!rs.next()){
-			sql = "INSERT INTO `" + DBName + "`.`account` (user_id,password,sex,birthYear,birthMonth) VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
+			sql = "INSERT INTO `" + DBName + "`.`account` (user_id, password, sex, birth_year, birth_month) VALUES('"+userID+"','"+passwd+"','"+userName+"','"+sex+"',"+birthYear+","+birthMonth+")";
 			System.out.println(sql);
 			stmt.execute(sql);
 			ok=1;
