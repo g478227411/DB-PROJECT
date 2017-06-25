@@ -198,15 +198,7 @@
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
 			<span id="mobile-header-user">
-				Hi,  <a href="main.jsp"><%
-				sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-				System.out.println(sql);
-
-				//取得结果
-				ResultSet rs = stmt.executeQuery(sql);
-				if (rs.next()){
-					out.println(rs.getString("user_name"));
-				}%></a>
+				Hi,  <a href="main.jsp"></a>
 			</span>
 
 			<input type="button" value="退出登录" onclick="location.href='logout.jsp'" id="mobile-header-logout">
@@ -220,11 +212,7 @@
 
 	<!--header id="desktop-header">
 		<span id="desktop-header-user">
-			Hi,  <a href="main.jsp"><%
-			rs = stmt.executeQuery(sql);
-			if (rs.next()){
-				out.println(rs.getString("user_name"));
-			}%></a>
+			Hi,  <a href="main.jsp"</a>
 		</span>
 
 		<form action="search.jsp" method="post" id="desktop-header-search">
