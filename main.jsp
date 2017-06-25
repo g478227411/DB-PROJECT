@@ -58,12 +58,15 @@
 <script>
 function Display()
 {
-	var divV = document.getElementById("simple-example");
-	if(divV.style.visibility =="hidden"){
-			divV.style.visibility ="visible";
-	 }else{
-			divV.style.visibility = "hidden";
-	}
+    var divD = document.getElementById("simple-example");
+    if(divD.style.display=="none")
+    {
+        divD.style.display = "block";   /*****可见****/
+    }
+    else
+    {
+        divD.style.display = "none";    /*****不可见****/
+    }
 }
             Ext.onReady(function() {
                 new Ext.ux.Carousel('simple-example');
@@ -295,8 +298,8 @@ function Display()
 </div>
 	</div>
 
-	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; visibility:hidden;
-	top:10px;left:200px;background-color: #E6E6E0">
+	<div id="simple-example" style="padding: 5px; height: 280px; width: 420px; display:block; 
+	position:fixed; top:10px;left:200px;background-color: #E6E6E0">
 <img src="heads/0.jpg" title="鼬~">
 <img src="heads/1.jpg" title="皮卡丘">
  <img src="heads/2.jpg" title="小缘喵">
@@ -310,6 +313,11 @@ function Display()
 <img src="heads/10.jpg" title="虐狗2">
 
  </div>
+
+ <script type="text/javascript">
+window.onload=function(){
+Display(); }
+</script>
 
 <div id="section">
 <div class="h1" >好友动态</div>
