@@ -104,6 +104,14 @@
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 </head>
 <body  >
+	<%
+	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
+	System.out.println(sql);
+
+	ResultSet rs1 = stmt.executeQuery(sql);
+	ResultSet rs =null；
+	String head_id=null;
+	%>
 	<div class="header">
 			<div class="header left">
 				<p width="700">
@@ -142,21 +150,14 @@
 				</div>
 				</div>
 
-				<%
-				sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
-				System.out.println(sql);
-
-				rs = stmt.executeQuery(sql);
-				String head_id=null;
-				%>
 				<div id="nav" >
 					<%
-					if (rs.next()){
-						head_id=rs.getString("avatar_index");
+					if (rs1.next()){
+						head_id=rs1.getString("avatar_index");
 						%>
 						<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none" >
 						<%
-						out.println(rs.getString("user_name"));
+						out.println(rs1.getString("user_name"));
 					}%>
 						<div class="wall-of-buttons">
 			       <P><a class="large blue button">我的关注</a></P>
