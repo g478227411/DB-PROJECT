@@ -44,11 +44,11 @@
 		<div class="avtar">
 		<img src="images/welcome3_1.jpg" /></div>
 	<form action="loginResponse.jsp" method="post">
-		<input type="user" class="text" value="UserID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserID';}" >
+		<input name="userID" type="user" class="text" value="UserID" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'UserID';}" >
 		<!--<div class="key">
 			<input type="password" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 		</div>-->
-		<input type="password" class="text" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
+		<input name="passwd" type="password" class="text" value='' onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 
 
 	<div class="col-sm-6">
