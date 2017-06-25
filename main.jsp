@@ -223,7 +223,7 @@
 		<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 	</header-->
 
-
+<div class="header">
 		<div class="header left">
 			<p>发表动态：</p>
 			<textarea type="text" id="statement" rows=8 cols=10 class="input_detail"></textarea>
@@ -240,7 +240,7 @@
 					<input type="button"  value="退出登录" onclick="location.href='logout.jsp'" id="desktop-header-logout">
 
 			</div>
-<br><br>
+			</div>
 	<div id="nav" >
 		<div class="bg">
 			<img src="fake-icon.png" class="head" alt="none"><%
