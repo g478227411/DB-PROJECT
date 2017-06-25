@@ -412,10 +412,10 @@ function Display()
 	}
 	%>
 </div>
-<script type="text/javascript">
+<!--script type="text/javascript">
 window.onload=function(){
 Display(); }
-</script>
+</script-->
 </body>
 </html>
 <%
