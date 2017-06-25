@@ -221,7 +221,9 @@
 	sql= "SELECT * FROM `account` where user_id = '"+userID+"' LIMIT 1";
 	System.out.println(sql);
 
-	ResultSet rs = stmt.executeQuery(sql);%>
+	ResultSet rs = stmt.executeQuery(sql);
+	var head_id=rs.getString("avatar_index");
+	%>
 	<!--header id="mobile-header">
 		<div id="mobile-header-flex-container">
 			<span id="mobile-header-user">
@@ -269,7 +271,7 @@
 			</div>
 			</div>
 	<div id="nav" >
-			<img src="fake-icon.png" class="head" alt="none"><%
+			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none"><%
 			if (rs.next()){
 				out.println(rs.getString("user_name"));
 			}%>
@@ -319,7 +321,7 @@
 		<div class="msg-list">
    <div id="lphoto">
 		 <a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-  <img src="fake-icon.png" class="head" alt="none">
+  <img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
   <p class="exl"><%out.print(rs.getString("user_name"));%></p>
 	</a>
 	<p class="exl"><%out.print(rs.getString("release_time"));%></p>
@@ -359,7 +361,7 @@
   <div class="msg-list sender">
     <div id="rphoto">
    <a href="view.jsp?userID=<%out.print(rs2.getString("user_id"));%>">
-  <img src="fake-icon.png" class="head" alt="none">
+  <img src="heads/<%out.print(rs2.getString("avatar_index"))" class="head" alt="none">
    <p class="exr"><%out.print(rs2.getString("user_name"));%></p></a>
 	 <p class="exl"><%out.print(rs2.getString("release_time"));%></p>
    </div>
