@@ -166,7 +166,8 @@
 				<div id="section">
 				<div class="h1" >我的关注</div>
 					<%
-					sql= "SELECT friend_id from `friends` where user_id = '" + targetID + "') ";
+					sql="SELECT * FROM `account` where user_id in("
+						+		"SELECT friend_id from `friends` where user_id = '" + targetID + "') ";
 					System.out.println(sql);
 					//取得结果
 					rs = stmt.executeQuery(sql);
