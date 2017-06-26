@@ -56,48 +56,6 @@
 			border-color: "#202020";
 		}
 	</style>
-	<SCRIPT type="text/javascript">
-	function reply(statementID){
-			var statementDoc=document.getElementById(statementID);
-			if(statementDoc.style.display=="none"){
-				statementDoc.style.display="";
-				statementDoc=document.getElementById(statementID+"Button");
-				statementDoc.style.display="";
-			}
-			else{
-				statementDoc.style.display="none";
-				statementDoc=document.getElementById(statementID+"Button");
-				statementDoc.style.display="none";
-			}
-		}
-		function submitReply(statementID){
-			var statementDoc=document.getElementById(statementID);
-			var strInput = statementDoc.value;
-			if (strInput!=""){
-				var xmlhttp=null;
-				if (window.XMLHttpRequest){
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				}
-				else{
-					// code for IE6, IE5
-					xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				if (xmlhttp!=null){
-					xmlhttp.onreadystatechange=function(){
-						if (xmlhttp.readyState==4 && xmlhttp.status==200){
-
-							window.location.reload();
-						}
-					}
-					xmlhttp.open("GET","submitReply.jsp?words="+strInput+"&statementID="+statementID,true);
-					xmlhttp.send();
-				}
-			}else{
-				alert("请输入内容！");
-			}
-		}
-	</SCRIPT>
 	<link rel="stylesheet" href="chatbox.css" media="screen" >
 		<link href="playground.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="blingbling.css" media="all" rel="stylesheet" type="text/css" />
