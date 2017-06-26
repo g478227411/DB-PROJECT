@@ -158,8 +158,8 @@
 						out.println(rs1.getString("user_name"));
 					}%>
 						<div class="wall-of-buttons">
-			       <P><a class="large blue button">我的关注</a></P>
-			       <P><a class="large green button">我的粉丝</a></P>
+			       <P><a class="large blue button" href="following.jsp?userID=targetID">我的关注</a></P>
+			       <P><a class="large green button" href="follower.jsp?userID=targetID">我的粉丝</a></P>
 						 <br>
 			</div>
 				</div>
