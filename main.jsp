@@ -305,10 +305,9 @@ function Display()
 			out.println(rs.getString("user_name"));
 		}%>
 			<div class="wall-of-buttons">
-       <P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的关注</a></P>
-       <P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>
-			 <br>
-</div>
+      			<P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的关注</a></P>
+       			<P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>			
+			</div>
 	</div>
 
 	<div id="simple-example" style="

@@ -139,8 +139,6 @@
 								<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
 				 				<p class="exl"><%out.print(rs.getString("user_name"));%></p>
 								</a>
-								<p class="exl"><%out.print(rs.getString("release_time"));%></p>
-
 				  			</div>
 				  		</div>
 				<!--/table-->
