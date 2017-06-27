@@ -123,34 +123,30 @@
 				</div>
 				<div id="section">
 				<div class="h1" >我的粉丝</div>
-					<%
-					sql= "SELECT * FROM `account` where user_id in("
+					<%sql= "SELECT * FROM `account` where user_id in("
 						+	"SELECT user_id FROM `friends`  "
 						+	"where friend_id = '"+ userID + "') ";
 					System.out.println(sql);
 					//取得结果
 					rs = stmt.executeQuery(sql);
-					while (rs.next()){
-					%>
+					while (rs.next()){%>
 					<div class="linear">
-					<div class="clear"></div>
+						<div class="clear"></div>
 						<div class="msg-list">
 				  			<div id="fphoto">
 								<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
 								<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+				  				<p class="exl"><%out.print(rs.getString("user_name"));%></p>
 								</a>
 				  			</div>
-				  			<div id=fcontent>
-				  				<p class="exr"><%out.print(rs.getString("user_name"));%></p>
+				  			<div id="fcontent">
 				  				<p class="exr">性别：<%out.print(rs.getString("sex")+" ");%></p>
 				  				<p class="exr">出生年月：<%out.print(rs.getString("birth_year")+"年");%>
 				  				<%out.print(rs.getString("birth_month")+"月");}%></p>
 				  			</div>
 				  		</div>
 					</div>
-					<%
-					}
-					%>
+					<%}%>
 				</div>
 </body>
 </html>
