@@ -133,12 +133,12 @@
 					<div class="linear">
 						<div class="clear"></div>
 						<div class="msg-list">
-				  			<div id="fphoto">
+				  			<div id="lphoto">
 								<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
 								<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
 								</a>
 				  			</div>
-				  			<div id="fcontent">
+				  			<div id="lcontent">
 				      		<div class="messenger-container">
 				  				<p><%out.print(rs.getString("user_name"));%></p>
 				  				<p>性别：<%out.print(rs.getString("sex")+" ");%></p>

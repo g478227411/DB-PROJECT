@@ -132,12 +132,18 @@
 						<div class="linear">
 							<div class="clear"></div>
 							<div class="msg-list">
-				  			 	<div id="lphoto">
-									<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-									<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
-				 					<p class="exl"><%out.print(rs.getString("user_name"));%></p>
-									</a>
+							<div id="lphoto">
+								<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
+								<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+								</a>
+				  			</div>
+				  			<div id="lcontent">
+				      		<div class="messenger-container">
+				  				<p><%out.print(rs.getString("user_name"));%></p>
+				  				<p>性别：<%out.print(rs.getString("sex")+" ");%></p>
+				  				<p>出生年月：<%out.print(rs.getString("birth_year")+"年"+rs.getString("birth_month")+"月");%></p>
 				  				</div>
+				  			</div>
 				  			</div>
 
 						</div>
