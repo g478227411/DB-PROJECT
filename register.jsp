@@ -7,7 +7,7 @@
 		<title>用户注册</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/style_register.css">
-		<script src="js/jquery.3.2.1.min.js"></script>
+		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
@@ -54,7 +54,7 @@
   			</div>
 
 			<input type="submit" value="注册" >&nbsp;&nbsp; 
-			<input type="button" value="返回" onclick="location.href='login.htm'">
+			<input type="button" value="返回" onclick="location.href='login.jsp'">
 		</form>
 	</body>
 </html>
