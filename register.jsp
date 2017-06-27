@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<title>系统登录</title>
+		<meta charset=utf-8>
+		<title>用户注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/style_register.css">
 		<script src="js/jquery.3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>用户注册2</h1>
+	<h1>用户注册</h1>
 	<div class="login-form">
 		<form action="registerResponse.jsp" method="post">
 			<div class="form-group">
