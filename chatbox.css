@@ -2,8 +2,8 @@
 #lcontent {float: right; width: 90%;}
 #rphoto {float: right; width: 10%;}
 #rcontent {float: left; width: 90%;}
-#fphoto{float: center; width: 30%;}
-#fcontent{float: left;width: 70%}
+#fphoto {float: center; width: 30%;}
+#fcontent {float: left;width: 70%}
 .header {
 text-align:center;
 border-radius:15px;
