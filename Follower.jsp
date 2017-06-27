@@ -141,7 +141,7 @@
 				  			</div>
 				  			<div id="fcontent">
 				  				<p class="exr">性别：<%out.print(rs.getString("sex")+" ");%></p>
-				  				<p class="exr">出生年月：<%out.print(rs.getString("birth_year")+"年"+rs.getString("birth_month")+"月");}%></p>
+				  				<p class="exr">出生年月：<%out.print(rs.getString("birth_year")+"年"+rs.getString("birth_month")+"月");%></p>
 				  			</div>
 				  		</div>
 					</div>
