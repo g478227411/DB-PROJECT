@@ -1,50 +1,40 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>系统登录</title>
-		<meta http-equiv="pragma" content="no-cache">
-		<meta http-equiv="cache-control" content="no-cache">
-		<meta http-equiv="expires" content="0">
-
-		<meta http-equiv="keywords" content="social network,login">
-		<meta http-equiv="description" content="This is the login page.">
-		<meta http-equiv="author"content="OOPRS,shenxuchuan@pku.edu.cn">
-		<meta http-equiv="content-Type" content="text/html;charset=UTF-8">
-<style type="text/CSS">
-</style>
+		<link rel="stylesheet" type="text/css" href="css/style_register.css">
+		<script src="js/jquery.3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 </head>
-	<body bgcolor="papayawhip">
-	<div align="center" class="style1 style2">用 户 注 册
-	</div>
-	<center>
-	<form action="registerResponse.jsp" method="post">
-		<table border="2" bordercolor="black" bgcolor="">
-			<tbody>
-			<tr>
-				<td height="28">用户名</td>
-				<td><input type="text" name="userID" maxlength="20" style="width:150"></td>
-			</tr>
-			<tr>
-				<td height="28">密码</td>
-				<td><input type="password" name="passwd" maxlength="20" style="width:150"></td>
-			</tr>
-			<tr>
-				<td height="28">姓名</td>
-				<td><input type="text" name="userName" maxlength="20" style="width:150"></td>
-			</tr>
-			<tr>
-				<td height="28">性别</td>
-				<td>
-				男<input type="radio" name="sex" value="male" />&nbsp;
-				女<input type="radio" name="sex" value="female" />
-				其他 <input type="radio" name="sex" value="other">
-				隐藏 <input type="radio" name="sex" checked="selected" value="unknown">
-				</td>
-			</tr>
-			<tr>
-				<td height="28">出生年月</td>
-				<td>
-				<SELECT onclick="onSelect(this)" name="birthYear">
+<body>
+	<h1>用户注册2</h1>
+	<div class="login-form">
+		<form action="registerResponse.jsp" method="post">
+			<div class="form-group">
+				<label>用户名</label>
+				<input type="text" class="text" value="" name="userID">
+			</div>
+			<div class="form-group">
+			<label>密码</label>
+				<input class="form-control" type="password" name="passwd" placeholder="请设置密码">
+			</div>
+
+			<div class="form-group">
+			<label>姓名</label>
+				<input class="form-control" type="text" name="userName">
+			</div>
+			<div class="form-group">
+			<label>性别</label>
+				<input type="radio" name="sex" value="male" />男
+				<input type="radio" name="sex" value="female" />女
+				<input type="radio" name="sex" value="other" />其他
+				<input type="radio" name="sex" checked="selected" value="unknown" />隐藏
+			</div>
+
+			<div class="row">
+    			<label>出生年月</label>
+    			<SELECT onclick="onSelect(this)" name="birthYear">
 				<%
 					for (int i=1900;i<=2017;i++){
 						%> <option value=<%=i%> <% if (i == 2000) { out.print("selected"); } %> > <%=i%> </option> <%
@@ -58,13 +48,10 @@
 					}
 				%>
 				</SELECT>
-				</td>
-			</tr>
-			</tbody>
-		</table>
-	<input type="submit" value="注册" >&nbsp;&nbsp;
-	<input type="button" value="返回" onclick="location.href='login.htm'">
-	</form>
-	</center>
+  			</div>
+
+			<input type="submit" value="注册" >&nbsp;&nbsp; 
+			<input type="button" value="返回" onclick="location.href='login.htm'">
+		</form>
 	</body>
 </html>
