@@ -126,7 +126,7 @@
 					<%
 					sql= "SELECT * FROM `account` where user_id in("
 						+	"SELECT user_id FROM `friends`  "
-						+	"where friend_id = '"+ targetID + "') ";
+						+	"where friend_id = '"+ userID + "') ";
 					System.out.println(sql);
 					//取得结果
 					rs = stmt.executeQuery(sql);

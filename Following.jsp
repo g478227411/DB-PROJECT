@@ -122,30 +122,26 @@
 			</div>
 				</div>
 				<div id="section">
-				<div class="h1" >我的关注</div>
-					<%
-					sql="SELECT * FROM `account` where user_id in("
-						+		"SELECT friend_id from `friends` where user_id = '" + targetID + "') ";
-					System.out.println(sql);
-					//取得结果
-					rs = stmt.executeQuery(sql);
-					while (rs.next()){
-					%>
-					<div class="linear">
-					<div class="clear"></div>
-						<div class="msg-list">
-				  			 <div id="lphoto">
-								<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-								<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
-				 				<p class="exl"><%out.print(rs.getString("user_name"));%></p>
-								</a>
+					<div class="h1" >我的关注</div>
+						<%sql="SELECT * FROM `account` where user_id in("
+							+	"SELECT friend_id from `friends` where user_id = '" + userID + "') ";
+						System.out.println(sql);
+						//取得结果
+						rs = stmt.executeQuery(sql);
+						while (rs.next()){%>
+						<div class="linear">
+							<div class="clear"></div>
+							<div class="msg-list">
+				  			 	<div id="lphoto">
+									<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
+									<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+				 					<p class="exl"><%out.print(rs.getString("user_name"));%></p>
+									</a>
+				  				</div>
 				  			</div>
-				  		</div>
-				<!--/table-->
-					</div>
-					<%
-					}
-					%>
+
+						</div>
+					<%}%>
 				</div>
 </body>
 </html>
