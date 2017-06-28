@@ -60,17 +60,10 @@
 	function addFriend(userID){
 		if (userID!=""){
 			var xmlhttp = new XMLHttpRequest();
-			if (xmlhttp!=null){
-				xmlhttp.onreadystatechange=function(){
-					if (xmlhttp.readyState==4 && xmlhttp.status==200){
-						var s=document.getElementById(userID);
-						s.innerHTML="已添加";
-					}
-				}
 				xmlhttp.open("GET","add.jsp?friendID="+userID,true);
 				xmlhttp.send();
 			}
-		}else{
+		else{
 			alert("请输入内容！");
 		}
 	}
@@ -204,7 +197,6 @@ if(count>=3)break;
 		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>" onclick="<%out.print(oper);%>"/>
-	<span id="ddd"><input type="button" value="加为关注" onclick="addFriend('ddd')" /></span>
 			</div>
 				<div class="header center">
 
