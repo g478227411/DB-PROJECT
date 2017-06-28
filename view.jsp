@@ -155,7 +155,7 @@ count++;
 if(count>=3)break;
 }
 	%>
-	等<% out.print(rowCount);%>位好友也在关注TA
+	等<% out.print(rowcount);%>位好友也在关注TA
 	</p>
 			</div>
 				<div class="header center">
