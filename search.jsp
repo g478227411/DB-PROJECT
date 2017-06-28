@@ -104,20 +104,6 @@
 			 <br>
 </div>
 	</div>
-	<!--div align="center">
-	<table>
-	<tr>
-	<td style="width:400">Hi, <a href="main.jsp"><%
-	sql= "SELECT * FROM `account` where user_id = '" + userID + "' LIMIT 15";
-	System.out.println(sql);
-
-	//取得结果
-	ResultSet rs = stmt.executeQuery(sql);
-	if (rs.next()){
-		out.println(rs.getString("user_name"));
-	}%></a>
-	</td>
-	<td style="width:300"-->
 	<div id="section">
 	<form action="search.jsp" method="post">
 		<input type="text" name="searchName" maxlength="20" style="width:120"/>
