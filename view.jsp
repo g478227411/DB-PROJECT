@@ -73,6 +73,7 @@
 		}else{
 			alert("请输入内容！");
 		}
+		window.location.reload();
 	}
 	function deFriend(userID){
 		if (userID!=""){
@@ -90,6 +91,7 @@
 		}else{
 			alert("请输入内容！");
 		}
+		window.location.reload();
 	}
 	function reply(statementID){
 			var statementDoc=document.getElementById(statementID);

@@ -239,6 +239,11 @@ function Display()
 				alert("请输入内容！");
 			}
 		}
+		function myrefresh()
+{
+   window.location.reload();
+}
+setTimeout('myrefresh()',30000); //指定30秒刷新一次
 	</script>
 </head>
 <body>
@@ -306,7 +311,7 @@ function Display()
 		}%>
 			<div class="wall-of-buttons">
       			<P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的关注</a></P>
-       			<P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>			
+       			<P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>
 			</div>
 	</div>
 
