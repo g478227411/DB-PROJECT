@@ -138,12 +138,12 @@ sql= "SELECT * FROM `account` "
 +targetID+"' AND A.friend_id=B.user_id) ";
 System.out.println(sql);
 //取得结果
-rs.last();
-int rowcount = rs.getRow();
 
 int count =0;
 
 rs = stmt.executeQuery(sql);
+rs.last();
+int rowcount = rs.getRow();
 while (rs.next()){
 	%>
 	<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
