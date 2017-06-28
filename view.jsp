@@ -193,7 +193,9 @@ if(count>=3)break;
 		rs = stmt.executeQuery(sql);
 		String outer=null;
 		String oper=null;
-		if(rs.next()){
+		rs.last();
+		rowcount = rs.getRow();
+		if(rs==0){
 			outer = "加关注";
 			oper="addFriend("+targetID+")";
 		}else{
