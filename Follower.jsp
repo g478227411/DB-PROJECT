@@ -116,8 +116,8 @@
 						out.println(rs1.getString("user_name"));
 					}%>
 						<div class="wall-of-buttons">
-							<P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的关注</a></P>
-         			<P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>
+							<P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs1.getString("user_id"));%>">我的关注</a></P>
+         			<P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs1.getString("user_id"));%>">我的粉丝</a></P>
 						 <br>
 			</div>
 				</div>
@@ -130,7 +130,7 @@
 					//取得结果
 					rs = stmt.executeQuery(sql);
 					while (rs.next()){%>
-					<div >
+					<div style="height:100px">
 						<div class="msg-list">
 				  			<div id="lphoto">
 								<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
