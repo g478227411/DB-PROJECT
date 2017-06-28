@@ -80,7 +80,7 @@
 				xmlhttp.open("GET","delete.jsp?friendID="+userID,true);
 				xmlhttp.send();
 			}
-		}else{
+		else{
 			alert("请输入内容！");
 		}
 	}
