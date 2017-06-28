@@ -158,19 +158,19 @@ if(count>=3)break;
 	%>
 	等<% out.print(rowcount);%>位好友也在关注TA
 	</p>
-	<input type="button"  value="
-		<%
+	<%
 		sql="SELECT * FROM `friends` WHERE friend_id= '"
 		+ targetID+ "' AND user_id= '"+userID+"';";
 		System.out.println(sql);
 
 		rs = stmt.executeQuery(sql);
+		String outer=null;
 		if(rs.next()){
-			out.print("加关注"）;
+			outer = "加关注";
 		}else{
-			out.print("取消关注"）;
-		}
-		%>"
+			outer = "取消关注";}
+		%>
+	<input type="button"  value = "<%out.print(outer);%>"
 		 onclick="location.href='cgfollow.jsp'">
 			</div>
 				<div class="header center">
