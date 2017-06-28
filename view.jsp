@@ -131,7 +131,8 @@
 <%out.print(rs.getString("birth_month")+"月");
 }%></p>
 <p class="exr">你关注的
-<% sql="SELECT *
+<%
+sql="SELECT *
 FROM 'account'
 WHERE user_id in
 in (SELECT A.friend_id
