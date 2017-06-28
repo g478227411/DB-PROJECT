@@ -158,5 +158,5 @@
 		/** 关闭连接 **/
 		conn.close();
 		stmt.close();
-		rs.close();
+		//rs.close();
 %>
