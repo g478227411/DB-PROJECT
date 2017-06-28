@@ -63,7 +63,6 @@
 			if (xmlhttp!=null){
 				xmlhttp.onreadystatechange=function(){
 					if (xmlhttp.readyState==4 && xmlhttp.status==200){
-						//window.location.href="search.jsp?searchName=<%out.print(searchName);%>";
 						var s=document.getElementById(userID);
 						s.innerHTML="已添加";
 					}
