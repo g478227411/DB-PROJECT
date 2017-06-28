@@ -144,6 +144,7 @@ int count =0;
 rs = stmt.executeQuery(sql);
 rs.last();
 int rowcount = rs.getRow();
+rs.beforeFirst();
 while (rs.next()){
 	%>
 	<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
