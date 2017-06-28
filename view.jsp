@@ -202,7 +202,7 @@ if(count>=3)break;
 		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>"
-		 onclick="location.href='cgfollow.jsp'">
+		 onclick="<%out.print(oper);%>">
 			</div>
 				<div class="header center">
 
