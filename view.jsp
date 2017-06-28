@@ -138,7 +138,8 @@ sql= "SELECT * FROM `account` "
 +targetID+"' AND A.friend_id=B.user_id) ";
 System.out.println(sql);
 //取得结果
-int rowCount = rs.getRowCount();
+result.last();
+int rowcount = result.getRow();
 
 int count =0;
 
