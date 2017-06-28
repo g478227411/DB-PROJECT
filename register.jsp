@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>用户注册</h1>
-	<div class="login-form">
+	<div class="login-form" style="background-image:url(images/bg2)">
 		<form action="registerResponse.jsp" method="post">
 			<div class="form-group">
 				<label>用户名</label>
@@ -53,7 +53,7 @@
 				</SELECT>
   			</div>
 
-			<input type="submit" value="注册" >&nbsp;&nbsp; 
+			<input type="submit" value="注册" >&nbsp;&nbsp;
 			<input type="button" value="返回" onclick="location.href='login.jsp'">
 		</form>
 	</body>
