@@ -132,12 +132,13 @@
 }%></p>
 <p class="exr">你关注的
 <%
-sql= "SELECT * FROM 'account' "
+sql= "SELECT * FROM `account` "
 +"WHERE user_id in "
-+"(SELECT A.friend_id FROM 'friends' as A ,'friends' as B WHERE A.user_id= '"+userID+"' AND B.friend_id= '"
-+targetID+"') LIMIT 0,2;";
++"(SELECT A.friend_id FROM `friends` as A ,`friends`  as B WHERE A.user_id= '"+userID+"' AND B.friend_id= '"
++targetID+"' AND A.friend_id=B.user_id) LIMIT 0,2;";
 System.out.println(sql);
 //取得结果
+
 rs = stmt.executeQuery(sql);
 while (rs.next()){
 	%>
