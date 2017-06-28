@@ -195,10 +195,10 @@ if(count>=3)break;
 		String oper=null;
 		if(rs.next()){
 			outer = "加关注";
-			oper="addFriend(targetID)";
+			oper="addFriend("+targetID+")";
 		}else{
 			outer = "取消关注";
-			oper="deFriend(targetID)";
+			oper="deFriend("+targetID")";
 		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>"
