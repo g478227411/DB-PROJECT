@@ -111,7 +111,8 @@
 					if (rs1.next()){
 						head_id=rs1.getString("avatar_index");
 						%>
-						<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none" >
+						<a href="main.jsp">
+						<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none" > </a>
 						<%
 						out.println(rs1.getString("user_name"));
 					}%>

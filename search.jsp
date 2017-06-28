@@ -93,14 +93,14 @@
 		ResultSet rs1 = stmt.executeQuery(sql);
 		if (rs1.next()){
 			head_id=rs1.getString("avatar_index");
-			%>
-			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none" >
+			%><a href="main.jsp">
+			<img src="heads/<% out.print(head_id);%>.jpg" class="head" alt="none" ></a>
 			<%
 			out.println(rs1.getString("user_name"));
 		}%>
 			<div class="wall-of-buttons">
-			 <P><a class="large blue button">我的关注</a></P>
-			 <P><a class="large green button">我的粉丝</a></P>
+				<P><a class="large blue button" href="Following.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的关注</a></P>
+ 			 <P><a class="large green button" href="Follower.jsp?userID=<%out.print(rs.getString("user_id"));%>">我的粉丝</a></P>
 			 <br>
 </div>
 	</div>
