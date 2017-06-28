@@ -197,10 +197,10 @@ if(count>=3)break;
 		rowcount = rs.getRow();
 		if(rowcount==0){
 			outer = "加关注";
-			oper="addFriend("+targetID+")";
+			oper="location.href='add.jsp?friendID="+targetID+"'";
 		}else{
 			outer = "取消关注";
-			oper="deFriend("+targetID+")";
+			oper="location.href='delete.jsp?friendID="+targetID+"'";
 		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>"
