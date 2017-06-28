@@ -57,6 +57,34 @@
 		}
 	</style>
 	<SCRIPT type="text/javascript">
+	function addFriend(userID){
+		if (userID!=""){
+			var xmlhttp = new XMLHttpRequest();
+			if (xmlhttp!=null){
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						//window.location.href="search.jsp?searchName=<%out.print(searchName);%>";
+						var s=document.getElementById(userID);
+						s.innerHTML="已添加";
+					}
+				}
+				xmlhttp.open("GET","add.jsp?friendID="+userID,true);
+				xmlhttp.send();
+			}
+		}else{
+			alert("请输入内容！");
+		}
+	}
+	function deFriend(userID){
+		if (userID!=""){
+			var xmlhttp = new XMLHttpRequest();
+				xmlhttp.open("GET","delete.jsp?friendID="+userID,true);
+				xmlhttp.send();
+			}
+		}else{
+			alert("请输入内容！");
+		}
+	}
 	function reply(statementID){
 			var statementDoc=document.getElementById(statementID);
 			if(statementDoc.style.display=="none"){
@@ -165,10 +193,14 @@ if(count>=3)break;
 
 		rs = stmt.executeQuery(sql);
 		String outer=null;
+		String oper=null;
 		if(rs.next()){
 			outer = "加关注";
+			oper="addFriend(targetID)";
 		}else{
-			outer = "取消关注";}
+			outer = "取消关注";
+			oper="deFriend(targetID)";
+		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>"
 		 onclick="location.href='cgfollow.jsp'">
