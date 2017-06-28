@@ -118,8 +118,7 @@
 			+ "and user_id !='" + userID + "' "
 			+ "and user_id not in ( "
 			+ "select friend_id from `friends` where user_id = '" + userID + "'"
-			+ ") and user_id not in ( "
-			+ "select user_id from `friends` where friend_id = '" + userID + "');";
+			+ ");";
 
 		//取得结果
 		System.out.println(sql);
