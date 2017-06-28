@@ -243,7 +243,7 @@ function Display()
 {
    window.location.reload();
 }
-setTimeout('myrefresh()',1000); //指定30秒刷新一次
+setTimeout('myrefresh()',30000); //指定30秒刷新一次
 	</script>
 </head>
 <body>
