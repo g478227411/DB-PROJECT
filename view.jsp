@@ -130,6 +130,28 @@
 <p class="exr">我出生在<%out.print(rs.getString("birth_year")+"年");%>
 <%out.print(rs.getString("birth_month")+"月");
 }%></p>
+<p class="exr">你关注的
+<% sql="SELECT *
+FROM 'account'
+WHERE user_id in
+in (SELECT A.friend_id
+FROM 'friends' as A ,'friends' as B
+WHERE A.user_id= "+userID+" AND B.friend_id= "
++targetID+") LIMIT 0,2;";
+System.out.println(sql);
+//取得结果
+rs = stmt.executeQuery(sql);
+while (rs.next()){
+	%>
+	<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
+<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
+<p class="exl"><%out.print(rs.getString("user_name"));%></p>
+</a>
+<%
+}
+	%>
+	等好友也在关注TA
+	</p>
 			</div>
 				<div class="header center">
 
