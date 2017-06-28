@@ -60,20 +60,34 @@
 	function addFriend(userID){
 		if (userID!=""){
 			var xmlhttp = new XMLHttpRequest();
+			if (xmlhttp!=null){
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						var s=document.getElementById(userID);
+						s.innerHTML="已关注";
+					}
+				}
 				xmlhttp.open("GET","add.jsp?friendID="+userID,true);
 				xmlhttp.send();
 			}
-		else{
+		}else{
 			alert("请输入内容！");
 		}
 	}
 	function deFriend(userID){
 		if (userID!=""){
 			var xmlhttp = new XMLHttpRequest();
+			if (xmlhttp!=null){
+				xmlhttp.onreadystatechange=function(){
+					if (xmlhttp.readyState==4 && xmlhttp.status==200){
+						var s=document.getElementById(userID);
+						s.innerHTML="已取消";
+					}
+				}
 				xmlhttp.open("GET","delete.jsp?friendID="+userID,true);
 				xmlhttp.send();
 			}
-		else{
+		}else{
 			alert("请输入内容！");
 		}
 	}
