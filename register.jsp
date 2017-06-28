@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>用户注册</h1>
-	<div class="login-form" style="background-image:url(images/bg2)">
+	<div class="login-form" style="background-image:url(images/bg2.jpg)">
 		<form action="registerResponse.jsp" method="post">
 			<div class="form-group">
 				<label>用户名</label>
