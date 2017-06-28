@@ -204,6 +204,8 @@ if(count>=3)break;
 		}
 		%>
 	<input type="button"  value = "<%out.print(outer);%>" onclick="<%out.print(oper);%>"/>
+	<input type="button" value="加为关注" onclick="addFriend('ddd')" />
+
 			</div>
 				<div class="header center">
 
