@@ -195,7 +195,7 @@ if(count>=3)break;
 		String oper=null;
 		rs.last();
 		rowcount = rs.getRow();
-		if(rs==0){
+		if(rowcount==0){
 			outer = "加关注";
 			oper="addFriend("+targetID+")";
 		}else{
