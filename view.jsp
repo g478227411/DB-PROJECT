@@ -135,9 +135,12 @@
 sql= "SELECT * FROM `account` "
 +"WHERE user_id in "
 +"(SELECT A.friend_id FROM `friends` as A ,`friends`  as B WHERE A.user_id= '"+userID+"' AND B.friend_id= '"
-+targetID+"' AND A.friend_id=B.user_id) LIMIT 0,2;";
++targetID+"' AND A.friend_id=B.user_id) ";
 System.out.println(sql);
 //取得结果
+int rowCount = rs.getRow();
+
+int count =0;
 
 rs = stmt.executeQuery(sql);
 while (rs.next()){
@@ -147,9 +150,11 @@ while (rs.next()){
 <p class="exl"><%out.print(rs.getString("user_name"));%></p>
 </a>
 <%
+count++;
+if(count>=3)break;
 }
 	%>
-	等好友也在关注TA
+	等<% out.print(rowCount);%>位好友也在关注TA
 	</p>
 			</div>
 				<div class="header center">
