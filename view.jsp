@@ -203,8 +203,7 @@ if(count>=3)break;
 			oper="deFriend('"+targetID+"')";
 		}
 		%>
-	<input type="button"  value = "<%out.print(outer);%>"
-		 onclick="<%out.print(oper);%>">
+	<input type="button"  value = "<%out.print(outer);%>" onclick="<%out.print(oper);%>"/>
 			</div>
 				<div class="header center">
 
