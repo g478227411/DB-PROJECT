@@ -118,8 +118,7 @@
 			+ "and user_id !='" + userID + "' "
 			+ "and user_id not in ( "
 			+ "select friend_id from `friends` where user_id = '" + userID + "'"
-			+ ") and user_id not in ( "
-			+ "select user_id from `friends` where friend_id = '" + userID + "');";
+			+ ");";
 
 		//取得结果
 		System.out.println(sql);
@@ -143,7 +142,7 @@
 					</div>
 				</div>
 
-		<span id="<%out.print(rs.getString("user_id"));%>"><input type="button" value="加为好友" onclick="addFriend('<%out.print(rs.getString("user_id"));%>')" /></span>
+		<span id="<%out.print(rs.getString("user_id"));%>"><input type="button" value="加为关注" onclick="addFriend('<%out.print(rs.getString("user_id"));%>')" /></span>
 
 		</li>
 		</div>
