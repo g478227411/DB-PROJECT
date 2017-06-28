@@ -146,8 +146,8 @@ rs = stmt.executeQuery(sql);
 while (rs.next()){
 	%>
 	<a href="view.jsp?userID=<%out.print(rs.getString("user_id"));%>">
-<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none">
-<p class="exl"><%out.print(rs.getString("user_name"));%></p>
+<img src="heads/<% out.print(rs.getString("avatar_index"));%>.jpg" class="head" alt="none" style="float:center;">
+<p class="exr"><%out.print(rs.getString("user_name"));%></p>
 </a>
 <%
 count++;
