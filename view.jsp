@@ -242,8 +242,8 @@ if(count>=3)break;
 						out.println(rs1.getString("user_name"));
 					}%>
 						<div class="wall-of-buttons">
-			       <P><a class="large blue button" href="Following.jsp?userID=targetID">我的关注</a></P>
-			       <P><a class="large green button" href="Follower.jsp?userID=targetID">我的粉丝</a></P>
+							<P><a class="large blue button" href="Following.jsp?userID=<%out.print(userID);%>">我的关注</a></P>
+ 		  			 <P><a class="large green button" href="Follower.jsp?userID=<%out.print(userID);%>">我的粉丝</a></P>
 						 <br>
 			</div>
 				</div>
