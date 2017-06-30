@@ -217,6 +217,19 @@ WHERE user_id IN (
     AND a.friend_id = b.user_id);
 \end{minted}
 
+\subsection{头像切换}
+
+\begin{center}
+	\includegraphics[scale=0.6]{avatar.png}
+\end{center}
+
+头像切换涉及数据库的更新操作.
+\begin{minted}{sql}
+UPDATE `account`
+SET avatar_index = |\ttvariable{new\_index}|
+WHERE user_id = |\ttvariable{user\_id}|;
+\end{minted}
+
 \section{部署环境}
 
 本程序部署在一台 Linux 虚拟机上. 该虚拟机的硬件配置如下.
